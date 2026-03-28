@@ -1,0 +1,117 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations, localePath } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={t("products.meta.title")}
+  description={t("products.meta.description")}
+  lang={lang}
+>
+  <!-- Header -->
+  <section class="bg-brand-green-50 border-b border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        {t("products.header.eyebrow")}
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">{t("products.header.heading")}</h1>
+      <p class="text-xl text-gray-600 max-w-2xl">{t("products.header.body")}</p>
+    </div>
+  </section>
+
+  <!-- Robolab feature card -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-brand-green-100 text-brand-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
+            <span class="w-2 h-2 bg-brand-green-500 rounded-full"></span>
+            {t("products.robolab.badge")}
+          </div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">{t("products.robolab.heading")}</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">{t("products.robolab.body1")}</p>
+          <p class="text-gray-600 mb-8 leading-relaxed">{t("products.robolab.body2")}</p>
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a
+              href={localePath(lang, "/contact")}
+              class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+            >
+              {t("home.robolab.cta.demo")}
+            </a>
+            <a
+              href={localePath(lang, "/contact")}
+              class="inline-block border-2 border-brand-green-600 text-brand-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-50 transition-colors"
+            >
+              {t("footer.cta.button")}
+            </a>
+          </div>
+        </div>
+
+        <!-- Benefits list -->
+        <div class="space-y-5">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
+            {t("products.robolab.benefits.label")}
+          </h3>
+          {[
+            { title: t("products.robolab.b1.title"), body: t("products.robolab.b1.body") },
+            { title: t("products.robolab.b2.title"), body: t("products.robolab.b2.body") },
+            { title: t("products.robolab.b3.title"), body: t("products.robolab.b3.body") },
+            { title: t("products.robolab.b4.title"), body: t("products.robolab.b4.body") },
+          ].map(({ title, body }) => (
+            <div class="flex gap-4">
+              <div class="w-6 h-6 bg-brand-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-brand-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-900 mb-1">{title}</p>
+                <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshot / demo placeholder -->
+  <section class="bg-brand-green-50 border-y border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <div class="bg-brand-green-700 rounded-2xl aspect-video flex items-center justify-center">
+        <div class="text-center text-green-200">
+          <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <p class="font-medium">{t("products.demo.caption")}</p>
+          <p class="text-sm opacity-70 mt-1">
+            Or <a href={localePath(lang, "/contact")} class="underline hover:text-white">{t("products.demo.link")}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming soon -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-12">
+        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+          {t("products.coming.eyebrow")}
+        </p>
+        <h2 class="text-3xl font-bold text-gray-900">{t("products.coming.heading")}</h2>
+        <p class="text-gray-600 mt-3 max-w-xl mx-auto">{t("products.coming.body")}</p>
+      </div>
+      <div class="border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center max-w-md mx-auto">
+        <p class="text-4xl mb-4">🚧</p>
+        <p class="font-semibold text-gray-900 mb-2">{t("products.coming.label")}</p>
+        <p class="text-gray-500 text-sm">{t("products.coming.sub")}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,92 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={t("about.meta.title")}
+  description={t("about.meta.description")}
+  lang={lang}
+>
+  <!-- Header -->
+  <section class="bg-brand-green-50 border-b border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        {t("about.header.eyebrow")}
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">{t("about.header.heading")}</h1>
+      <p class="text-xl text-gray-600 max-w-2xl">{t("about.header.body")}</p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">{t("about.story.heading")}</h2>
+        <div class="space-y-5 text-gray-600 leading-relaxed">
+          <p>{t("about.story.p1")}</p>
+          <p>{t("about.story.p2")}</p>
+          <p>{t("about.story.p3")}</p>
+          <p>{t("about.story.p4")}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founders -->
+  <section class="bg-brand-green-50 border-y border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-14">
+        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+          {t("about.founders.eyebrow")}
+        </p>
+        <h2 class="text-3xl font-bold text-gray-900">{t("about.founders.heading")}</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 max-w-3xl mx-auto">
+        {[
+          { initials: "F1", name: t("about.f1.name"), role: t("about.f1.role"), bio: t("about.f1.bio") },
+          { initials: "F2", name: t("about.f2.name"), role: t("about.f2.role"), bio: t("about.f2.bio") },
+        ].map(({ initials, name, role, bio }) => (
+          <div class="bg-white rounded-2xl p-8 border border-brand-green-100">
+            <div class="w-20 h-20 bg-brand-green-100 rounded-2xl flex items-center justify-center text-brand-green-700 font-bold text-xl mb-6">
+              {initials}
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-1">{name}</h3>
+            <p class="text-brand-green-600 text-sm font-medium mb-4">{role}</p>
+            <p class="text-gray-600 text-sm leading-relaxed">{bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-12">
+        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+          {t("about.values.eyebrow")}
+        </p>
+        <h2 class="text-3xl font-bold text-gray-900">{t("about.values.heading")}</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {[
+          { title: t("about.v1.title"), body: t("about.v1.body") },
+          { title: t("about.v2.title"), body: t("about.v2.body") },
+          { title: t("about.v3.title"), body: t("about.v3.body") },
+        ].map(({ title, body }) => (
+          <div class="text-center">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

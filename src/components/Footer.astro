@@ -1,0 +1,59 @@
+---
+import { useTranslations, localePath } from "../i18n/utils";
+import type { Lang } from "../i18n/utils";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<!-- Page-level CTA -->
+<section class="bg-brand-green-50 border-t border-brand-green-100">
+  <div class="max-w-6xl mx-auto px-6 py-16 text-center">
+    <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+      {t("footer.cta.label")}
+    </p>
+    <h2 class="text-3xl font-bold text-gray-900 mb-4">
+      {t("footer.cta.heading")}
+    </h2>
+    <p class="text-gray-600 mb-8 max-w-md mx-auto">
+      {t("footer.cta.body")}
+    </p>
+    <a
+      href={localePath(lang, "/contact")}
+      class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+    >
+      {t("footer.cta.button")}
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-brand-green-800 text-green-100">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+      <!-- Brand -->
+      <div class="flex items-center gap-3">
+        <img src="/logo-mark.svg" alt="LottaComs" class="h-8 w-8 brightness-[10]" />
+        <span class="font-semibold text-white text-lg">LottaComs</span>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="flex flex-wrap gap-6 text-sm">
+        <a href={localePath(lang, "/products")} class="text-green-200 hover:text-white transition-colors">{t("nav.products")}</a>
+        <a href={localePath(lang, "/services")} class="text-green-200 hover:text-white transition-colors">{t("nav.services")}</a>
+        <a href={localePath(lang, "/about")}    class="text-green-200 hover:text-white transition-colors">{t("nav.about")}</a>
+        <a href={localePath(lang, "/contact")}  class="text-green-200 hover:text-white transition-colors">{t("nav.contact")}</a>
+      </nav>
+    </div>
+
+    <div class="mt-10 pt-8 border-t border-brand-green-700 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-green-300">
+      <p>&copy; {year} LottaComs. {t("footer.copyright")}</p>
+      <p class="text-brand-gold">{t("footer.tagline")}</p>
+    </div>
+  </div>
+</footer>

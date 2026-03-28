@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const roles = [
+  "Software Engineer",
+  "Senior / Staff Engineer",
+  "Platform & Infrastructure",
+  "DevOps / SRE",
+  "Engineering Manager",
+  "Head of Engineering",
+  "CTO / VP Engineering",
+  "Backend Engineer",
+  "Full-Stack Engineer",
+  "Data Engineer",
+  "ML / AI Engineer",
+  "Security Engineer",
+];
+---
+
+<BaseLayout
+  title={t("services.meta.title")}
+  description={t("services.meta.description")}
+  lang={lang}
+>
+  <!-- Header -->
+  <section class="bg-brand-green-50 border-b border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        {t("services.header.eyebrow")}
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        {t("services.header.heading").split("\n").map((line, i) => (
+          <>{i > 0 && <br />}{line}</>
+        ))}
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">{t("services.header.body")}</p>
+    </div>
+  </section>
+
+  <!-- What & Who -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-5">{t("services.what.heading")}</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">{t("services.what.body1")}</p>
+          <p class="text-gray-600 leading-relaxed">{t("services.what.body2")}</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-5">{t("services.who.heading")}</h2>
+          <ul class="space-y-3">
+            {[
+              t("services.who.i1"),
+              t("services.who.i2"),
+              t("services.who.i3"),
+              t("services.who.i4"),
+            ].map((item) => (
+              <li class="flex gap-3 items-start">
+                <span class="text-brand-green-600 font-bold mt-0.5">—</span>
+                <span class="text-gray-600">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="bg-brand-green-50 border-y border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-14">
+        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+          {t("services.how.eyebrow")}
+        </p>
+        <h2 class="text-3xl font-bold text-gray-900">{t("services.how.heading")}</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {[
+          { num: t("services.how.s1.num"), title: t("services.how.s1.title"), body: t("services.how.s1.body") },
+          { num: t("services.how.s2.num"), title: t("services.how.s2.title"), body: t("services.how.s2.body") },
+          { num: t("services.how.s3.num"), title: t("services.how.s3.title"), body: t("services.how.s3.body") },
+        ].map(({ num, title, body }) => (
+          <div class="bg-white rounded-2xl p-8 border border-brand-green-100">
+            <p class="text-4xl font-bold text-brand-green-100 mb-4">{num}</p>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Roles we recruit for -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-12">
+        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+          {t("services.roles.eyebrow")}
+        </p>
+        <h2 class="text-3xl font-bold text-gray-900">{t("services.roles.heading")}</h2>
+        <p class="text-gray-600 mt-3 max-w-xl mx-auto">{t("services.roles.body")}</p>
+      </div>
+      <div class="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
+        {roles.map((role) => (
+          <span class="bg-brand-green-50 text-brand-green-800 border border-brand-green-100 rounded-full px-4 py-2 text-sm font-medium">
+            {role}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
