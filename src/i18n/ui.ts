@@ -28,18 +28,18 @@ const en = {
   "footer.cta.label": "Let's talk",
   "footer.cta.heading": "Working on something?",
   "footer.cta.body":
-    "Whether you need the right software or the right people — we'd love to hear about it.",
+    "Whether it's about software or finding the right person — drop us a line.",
   "footer.cta.button": "Get in touch",
   "footer.tagline": "It's the Community.",
   "footer.copyright": "All rights reserved.",
 
   // ── Home ────────────────────────────────────────────────────
   "home.meta.description":
-    "We build software tools and find great talent for technology teams.",
+    "We build software tools and source technical talent for technology teams.",
   "home.hero.eyebrow": "Software & Talent",
   "home.hero.heading": "We build the tools.\nWe find the people.",
   "home.hero.body":
-    "LottaComs makes software that teams love — and when you need the right people to build and run it, we can find them.",
+    "LottaComs makes software built for real teams — and when you need the right people to build and run it, we can find them.",
   "home.hero.cta.contact": "Get in touch",
   "home.hero.cta.products": "See what we build",
 
@@ -51,7 +51,7 @@ const en = {
   "home.what.software.link": "Explore our products →",
   "home.what.talent.title": "Talent Services",
   "home.what.talent.body":
-    "Finding great technical talent is hard. We've done it, we know the market, and we take a hands-on approach to matching the right people with the right teams.",
+    "Finding great technical talent is hard. We know the Vietnam and Japan market, and we take a hands-on approach to matching the right people with the right teams.",
   "home.what.talent.link": "Learn how it works →",
 
   "home.robolab.eyebrow": "Featured product",
@@ -64,17 +64,6 @@ const en = {
   "home.robolab.feature.observability": "Built-in observability",
   "home.robolab.feature.team": "Team-friendly",
 
-  "home.social.eyebrow": "Trusted by teams",
-  "home.social.heading": "What people are saying",
-  "home.social.t1.quote":
-    "\"LottaComs didn't just find us a great engineer — they found us someone who actually fit how our team works. That's rare.\"",
-  "home.social.t1.name": "Alex M.",
-  "home.social.t1.role": "Engineering Lead",
-  "home.social.t2.quote":
-    '"Robolab cut our deployment prep time in half. The setup was surprisingly straightforward for something so powerful."',
-  "home.social.t2.name": "Sam T.",
-  "home.social.t2.role": "Platform Engineer",
-
   // ── Products ────────────────────────────────────────────────
   "products.meta.title": "Products",
   "products.meta.description":
@@ -82,7 +71,7 @@ const en = {
   "products.header.eyebrow": "Products",
   "products.header.heading": "What we build",
   "products.header.body":
-    "We focus on tools that actually get used — practical, well-crafted software for teams that value their time.",
+    "We focus on tools that get used — practical, well-crafted software for teams that value their time.",
 
   "products.robolab.badge": "Coming soon",
   "products.robolab.heading": "Robolab",
@@ -118,15 +107,16 @@ const en = {
   "services.meta.description":
     "Technical talent sourcing and headhunting by LottaComs.",
   "services.header.eyebrow": "Talent Services",
-  "services.header.heading": "Finding people is hard.\nWe make it easier.",
+  "services.header.heading":
+    "Finding the right people is hard.\nWe've made that our focus.",
   "services.header.body":
-    "We're engineers and operators who've been on both sides of the hiring table. We know what good looks like — and we know how to find it.",
+    "We specialise in sourcing technical and leadership talent for software companies in Vietnam and Japan. No cold-list blasting — just careful, relationship-driven search.",
 
   "services.what.heading": "What we do",
   "services.what.body1":
     "We help technology companies find and place technical talent — software engineers, platform and infrastructure specialists, engineering leaders, and more.",
   "services.what.body2":
-    'We don\'t shotgun CVs. We take time to understand your team, your culture, and what "great" actually means for the role. Then we go find it.',
+    "We don't shotgun CVs. We take time to understand your team, your culture, and what a good hire looks like for the role. Then we go and find that person.",
   "services.who.heading": "Who it's for",
   "services.who.i1": "Engineering-led startups moving fast",
   "services.who.i2": "Scale-ups building out a technical function",
@@ -146,54 +136,54 @@ const en = {
   "services.how.s3.num": "03",
   "services.how.s3.title": "You meet real matches",
   "services.how.s3.body":
-    "We only put forward people we'd hire ourselves. You get a small shortlist of quality over a long list of maybe.",
+    "We only put forward candidates who genuinely fit what you described — not whoever's available. You get a small shortlist of quality over a long list of maybes.",
 
   "services.roles.eyebrow": "Specialisms",
   "services.roles.heading": "Roles we recruit for",
   "services.roles.body":
-    "We focus on technical roles where understanding the work is non-negotiable. If it's in the list, we know it well.",
+    "Our focus is technical and leadership roles at software companies. We work to understand the requirements well enough to find people who'll thrive in them.",
 
   // ── About ───────────────────────────────────────────────────
   "about.meta.title": "About",
   "about.meta.description":
     "The story behind LottaComs and the people who built it.",
   "about.header.eyebrow": "About",
-  "about.header.heading": "Why we started LottaComs",
+  "about.header.heading": "We burned out on corporate nonsense",
   "about.header.body":
-    "A small team with an opinion on how software and hiring should work.",
+    "So we did something about it. Two people, two skill sets, one small company.",
 
   "about.story.heading": "The story",
   "about.story.p1":
-    "LottaComs started from a simple frustration: the tools available to small engineering teams were either too basic to be useful or too complex to be worth it. And finding the right people to work with them? Even harder.",
+    "Both of us left the corporate world for the same reason: the overhead wasn't worth it. The politics, the performative busyness, the gap between what the work actually required and what the organisation demanded — it wears you down.",
   "about.story.p2":
-    "We've worked in engineering and operations at companies of all sizes. We've felt the pain of bad tooling and mis-hires. LottaComs is our attempt to do something about both.",
+    "LottaComs is what came after. One of us builds software. The other places people. We're not trying to become a large agency or a high-growth startup. We're building the kind of place we'd want to work.",
   "about.story.p3":
-    "Our software is built to be genuinely useful to the teams using it — not to impress a procurement committee. Our talent work is done by people who've actually worked in engineering, not just recruited for it.",
+    "That means staying small, being honest about what we can and can't do, and treating every client and candidate like a real person rather than a transaction. It's not a radical idea — it's just harder to hold onto inside a big company.",
   "about.story.p4":
-    "We're building in public, moving carefully, and staying small on purpose. We'd rather do two things well than ten things badly.",
+    "We think of LottaComs as a village: people who've opted out of the corporate game and want to build something on their own terms, with people they trust.",
 
   "about.founders.eyebrow": "The team",
-  "about.founders.heading": "The founders",
-  "about.f1.name": "Founder One",
-  "about.f1.role": "Co-founder",
+  "about.founders.heading": "Who we are",
+  "about.f1.name": "Nguyen Huu Bao Trung",
+  "about.f1.role": "Founder — Software & Systems",
   "about.f1.bio":
-    "Bio coming soon. Reach out via the contact page if you'd like to connect.",
-  "about.f2.name": "Founder Two",
-  "about.f2.role": "Co-founder",
+    "System consultant and engineer. Works primarily with Japanese clients on requirement definition and system design. Builds software products using AI-assisted development. Native-level Japanese, working English.",
+  "about.f2.name": "Co-founder",
+  "about.f2.role": "Talent Services",
   "about.f2.bio":
-    "Bio coming soon. Reach out via the contact page if you'd like to connect.",
+    "Former talent acquisition manager at a mid-size Vietnamese corporation. Specialises in recruiting senior and leadership roles at software companies across Vietnam and Japan. Focused on the hiring side — not the engineering side.",
 
   "about.values.eyebrow": "How we work",
   "about.values.heading": "What we believe",
-  "about.v1.title": "Small is fine",
+  "about.v1.title": "No fake family",
   "about.v1.body":
-    "Staying lean means we can care about every customer. We don't want to scale past the point of caring.",
-  "about.v2.title": "Do it properly",
+    "We don't do the \"we're all family here\" line. LottaComs is a community of people who chose each other — that's more meaningful, and more honest.",
+  "about.v2.title": "Honest about our limits",
   "about.v2.body":
-    "Whether it's a line of code or a candidate recommendation — if we wouldn't stand behind it, we don't ship it.",
-  "about.v3.title": "Community first",
+    'We\'d rather say "we don\'t know" or "that\'s not for us" than overpromise. Scope creep and scope-stretch both come from the same insecurity.',
+  "about.v3.title": "Small and intentional",
   "about.v3.body":
-    "LottaComs is built around the idea that good communities produce good work. We take that seriously.",
+    "We're not trying to scale. We want to do fewer things well and work with people we'd genuinely recommend to a friend.",
 
   // ── Contact ─────────────────────────────────────────────────
   "contact.meta.title": "Contact",
