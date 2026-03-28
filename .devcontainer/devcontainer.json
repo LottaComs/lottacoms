@@ -14,12 +14,12 @@
   },
   "mounts": [
     "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/Projects/claude-skills,target=/home/hawkie/Projects/claude-skills,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/Projects/claude-skills,target=/home/node/claude-skills,type=bind,consistency=cached"
   ],
   "remoteEnv": {
     "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
   },
-  "postCreateCommand": "npm install",
+  "postCreateCommand": "npm install && mkdir -p .claude/skills && ln -sf ~/claude-skills/* .claude/skills/",
   "customizations": {
     "vscode": {
       "extensions": [

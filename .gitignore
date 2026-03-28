@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # VS Code
 .vscode/
+
+# Claude Code skills (symlinks to local machine paths)
+.claude/skills/
