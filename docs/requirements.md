@@ -41,7 +41,7 @@ Showcases Robolab and future software products.
    - What it does
    - Who it's for
    - Key benefits
-   - Screenshot or demo link
+   - Screenshot placeholder
 2. **Future Products Placeholder** — "More coming soon" card
 
 ---

@@ -29,20 +29,14 @@ const t = useTranslations(lang);
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div>
-          <div class="inline-flex items-center gap-2 bg-brand-green-100 text-brand-green-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
-            <span class="w-2 h-2 bg-brand-green-500 rounded-full"></span>
+          <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
+            <span class="w-2 h-2 bg-amber-400 rounded-full"></span>
             {t("products.robolab.badge")}
           </div>
           <h2 class="text-3xl font-bold text-gray-900 mb-4">{t("products.robolab.heading")}</h2>
           <p class="text-gray-600 text-lg mb-6 leading-relaxed">{t("products.robolab.body1")}</p>
           <p class="text-gray-600 mb-8 leading-relaxed">{t("products.robolab.body2")}</p>
           <div class="flex flex-wrap gap-3 mb-10">
-            <a
-              href={localePath(lang, "/contact")}
-              class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
-            >
-              {t("home.robolab.cta.demo")}
-            </a>
             <a
               href={localePath(lang, "/contact")}
               class="inline-block border-2 border-brand-green-600 text-brand-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-50 transition-colors"
@@ -89,9 +83,6 @@ const t = useTranslations(lang);
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
           <p class="font-medium">{t("products.demo.caption")}</p>
-          <p class="text-sm opacity-70 mt-1">
-            Or <a href={localePath(lang, "/contact")} class="underline hover:text-white">{t("products.demo.link")}</a>
-          </p>
         </div>
       </div>
     </div>

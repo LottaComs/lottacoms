@@ -30,7 +30,7 @@ const en = {
   "footer.cta.body":
     "Whether you need the right software or the right people — we'd love to hear about it.",
   "footer.cta.button": "Get in touch",
-  "footer.tagline": "It's the community, community.",
+  "footer.tagline": "It's the Community.",
   "footer.copyright": "All rights reserved.",
 
   // ── Home ────────────────────────────────────────────────────
@@ -47,7 +47,7 @@ const en = {
   "home.what.heading": "Two ways we can help",
   "home.what.software.title": "Software Products",
   "home.what.software.body":
-    "We design and build software for real teams with real problems. Our flagship product is Robolab — built to make automation accessible, without the enterprise headaches.",
+    "We design and build software for real teams with real problems. Our flagship product is Robolab — a fleet management platform for autonomous mobile robots, built without the enterprise overhead.",
   "home.what.software.link": "Explore our products →",
   "home.what.talent.title": "Talent Services",
   "home.what.talent.body":
@@ -57,9 +57,8 @@ const en = {
   "home.robolab.eyebrow": "Featured product",
   "home.robolab.heading": "Meet Robolab",
   "home.robolab.body":
-    "Robolab helps teams automate the repetitive parts of their workflow — without writing a novel's worth of infrastructure code. Built for engineers who want results, not another platform to maintain.",
+    "Robolab is a fleet management platform for autonomous mobile robots. Dispatch missions, coordinate traffic, and monitor your entire AMR fleet in real time — from a single dashboard, backed by a clean REST API.",
   "home.robolab.cta.see": "See Robolab",
-  "home.robolab.cta.demo": "Request a demo",
   "home.robolab.feature.fast": "Fast to set up",
   "home.robolab.feature.config": "No-fuss configuration",
   "home.robolab.feature.observability": "Built-in observability",
@@ -85,28 +84,27 @@ const en = {
   "products.header.body":
     "We focus on tools that actually get used — practical, well-crafted software for teams that value their time.",
 
-  "products.robolab.badge": "Available now",
+  "products.robolab.badge": "Coming soon",
   "products.robolab.heading": "Robolab",
   "products.robolab.body1":
-    "Robolab helps engineering teams automate the slow, repetitive parts of their workflow. No bloated platform. No six-week onboarding. Just a focused tool that does what it says.",
+    "Robolab is a fleet management platform for autonomous mobile robots — AGVs, AMRs, and IMRs. One dashboard to manage your vehicles, dispatch missions, and monitor operations across your facility in real time.",
   "products.robolab.body2":
-    "Built for teams who want to ship faster without gluing together a dozen separate tools. Whether you're automating deployments, test pipelines, or internal ops — Robolab adapts to how you already work.",
-  "products.robolab.benefits.label": "Key benefits",
-  "products.robolab.b1.title": "Fast to set up",
+    "Built API-first with a clean REST interface and a purpose-built web UI. Model your facility as a topological map, define routes, and start dispatching missions — no proprietary vendor stack, no weeks of integration work.",
+  "products.robolab.benefits.label": "What it does",
+  "products.robolab.b1.title": "Full vehicle control",
   "products.robolab.b1.body":
-    "Running in minutes, not days. Works with your existing stack — no migrations required.",
-  "products.robolab.b2.title": "Team-friendly",
+    "Command any vehicle in your fleet — switch modes, move, pause, resume, reset, or cancel — from the dashboard or REST API. Every action is one click or one call away.",
+  "products.robolab.b2.title": "Intelligent mission planning",
   "products.robolab.b2.body":
-    "Designed so your whole team can use it, not just the person who configured it.",
-  "products.robolab.b3.title": "Built-in observability",
+    "Robolab automatically selects the right vehicle, computes the optimal route, and coordinates traffic windows to prevent conflicts — no manual scheduling required.",
+  "products.robolab.b3.title": "Topological facility maps",
   "products.robolab.b3.body":
-    "Know what's running, what failed, and why — without bolting on another monitoring tool.",
-  "products.robolab.b4.title": "No platform lock-in",
+    "Model your floor as a graph of nodes and edges. Robolab validates connectivity before activation and routes all missions through the map — update the map, not the firmware.",
+  "products.robolab.b4.title": "Digital twin simulation",
   "products.robolab.b4.body":
-    "Your automations stay yours. Export, version-control, and run them anywhere.",
+    "Spin up an isolated simulation from a live system snapshot, step through time with media-player controls, and validate changes before they touch the real floor.",
 
-  "products.demo.caption": "Demo screenshot coming soon",
-  "products.demo.link": "request a live demo",
+  "products.demo.caption": "Screenshot coming soon",
 
   "products.coming.eyebrow": "What's next",
   "products.coming.heading": "More coming soon",
@@ -128,7 +126,7 @@ const en = {
   "services.what.body1":
     "We help technology companies find and place technical talent — software engineers, platform and infrastructure specialists, engineering leaders, and more.",
   "services.what.body2":
-    "We don't shotgun CVs. We take time to understand your team, your culture, and what \"great\" actually means for the role. Then we go find it.",
+    'We don\'t shotgun CVs. We take time to understand your team, your culture, and what "great" actually means for the role. Then we go find it.',
   "services.who.heading": "Who it's for",
   "services.who.i1": "Engineering-led startups moving fast",
   "services.who.i2": "Scale-ups building out a technical function",
