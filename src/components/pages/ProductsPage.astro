@@ -24,7 +24,7 @@ const t = useTranslations(lang);
     </div>
   </section>
 
-  <!-- Robolab feature card -->
+  <!-- RoboLab feature card -->
   <section class="bg-white">
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="grid md:grid-cols-2 gap-16 items-start">
@@ -37,6 +37,12 @@ const t = useTranslations(lang);
           <p class="text-gray-600 text-lg mb-6 leading-relaxed">{t("products.robolab.body1")}</p>
           <p class="text-gray-600 mb-8 leading-relaxed">{t("products.robolab.body2")}</p>
           <div class="flex flex-wrap gap-3 mb-10">
+            <a
+              href="/robolab"
+              class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+            >
+              {t("products.robolab.cta.demo")}
+            </a>
             <a
               href={localePath(lang, "/contact")}
               class="inline-block border-2 border-brand-green-600 text-brand-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-50 transition-colors"

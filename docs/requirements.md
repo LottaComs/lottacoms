@@ -2,7 +2,7 @@
 
 ## Overview
 
-LottaComs is a company landing page serving two distinct audiences: software buyers (Robolab product) and hiring managers (talent/headhunting services). The site must quickly orient each visitor and route them toward the relevant section.
+LottaComs is a company landing page serving two distinct audiences: software buyers (RoboLab product) and hiring managers (talent/headhunting services). The site must quickly orient each visitor and route them toward the relevant section.
 
 **Goals:**
 - Communicate what LottaComs is and who it's for within 5 seconds of landing
@@ -26,7 +26,7 @@ Primary entry point. Must split-route visitors toward Products or Services witho
 2. **What We Do** — Two-column layout:
    - Software Products
    - Talent Services
-3. **Robolab Highlight** — Teaser card with link to Products page
+3. **RoboLab Highlight** — Teaser card with link to Products page
 4. **Social Proof** — Client logos or short testimonial(s)
 5. **Footer CTA** — "Working on something? Let's talk."
 
@@ -34,10 +34,10 @@ Primary entry point. Must split-route visitors toward Products or Services witho
 
 ### Products `/products`
 
-Showcases Robolab and future software products.
+Showcases RoboLab and future software products.
 
 **Sections:**
-1. **Robolab Feature Card**
+1. **RoboLab Feature Card**
    - What it does
    - Who it's for
    - Key benefits

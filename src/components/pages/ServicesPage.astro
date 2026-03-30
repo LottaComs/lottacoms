@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { useTranslations } from "../../i18n/utils";
+import { useTranslations, localePath } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
 
 interface Props { lang: Lang; }
@@ -47,7 +47,13 @@ const roles = [
           <>{i > 0 && <br />}{line}</>
         ))}
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl">{t("services.header.body")}</p>
+      <p class="text-xl text-gray-600 max-w-2xl mb-8">{t("services.header.body")}</p>
+      <a
+        href={localePath(lang, "/contact")}
+        class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+      >
+        {t("footer.cta.button")}
+      </a>
     </div>
   </section>
 
