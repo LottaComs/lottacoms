@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Message sent" lang="en">
+  <section class="bg-white">
+    <div class="max-w-2xl mx-auto px-6 py-32 text-center">
+      <div class="w-16 h-16 bg-brand-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+        <svg class="w-8 h-8 text-brand-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">Message sent</h1>
+      <p class="text-lg text-gray-600 mb-8">
+        Thanks for reaching out. We'll get back to you within one business day.
+      </p>
+      <a
+        href="/"
+        class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+      >
+        Back to home
+      </a>
+    </div>
+  </section>
+</BaseLayout>
