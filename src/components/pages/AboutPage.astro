@@ -75,15 +75,43 @@ const t = useTranslations(lang);
         </p>
         <h2 class="text-3xl font-bold text-gray-900">{t("about.values.heading")}</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <div class="space-y-14 max-w-4xl mx-auto">
         {[
-          { title: t("about.v1.title"), body: t("about.v1.body") },
-          { title: t("about.v2.title"), body: t("about.v2.body") },
-          { title: t("about.v3.title"), body: t("about.v3.body") },
-        ].map(({ title, body }) => (
-          <div class="text-center">
-            <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+          {
+            label: t("about.vg1.label"),
+            items: [
+              { title: t("about.v1.title"), body: t("about.v1.body") },
+              { title: t("about.v2.title"), body: t("about.v2.body") },
+              { title: t("about.v3.title"), body: t("about.v3.body") },
+            ],
+          },
+          {
+            label: t("about.vg2.label"),
+            items: [
+              { title: t("about.v4.title"), body: t("about.v4.body") },
+              { title: t("about.v5.title"), body: t("about.v5.body") },
+              { title: t("about.v6.title"), body: t("about.v6.body") },
+            ],
+          },
+          {
+            label: t("about.vg3.label"),
+            items: [
+              { title: t("about.v7.title"), body: t("about.v7.body") },
+              { title: t("about.v8.title"), body: t("about.v8.body") },
+              { title: t("about.v9.title"), body: t("about.v9.body") },
+            ],
+          },
+        ].map(({ label, items }) => (
+          <div>
+            <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-6 text-center">{label}</p>
+            <div class="grid md:grid-cols-3 gap-8">
+              {items.map(({ title, body }) => (
+                <div class="text-center">
+                  <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
+                  <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>

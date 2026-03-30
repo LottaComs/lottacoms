@@ -30,7 +30,7 @@ const en = {
   "footer.cta.body":
     "Whether it's about software or finding the right person — drop us a line.",
   "footer.cta.button": "Get in touch",
-  "footer.tagline": "It's the Community.",
+  "footer.tagline": "It's the Communities.",
   "footer.copyright": "All rights reserved.",
 
   // ── Home ────────────────────────────────────────────────────
@@ -202,15 +202,39 @@ const en = {
 
   "about.values.eyebrow": "How we work",
   "about.values.heading": "What we believe",
-  "about.v1.title": "No fake family",
+
+  "about.vg1.label": "Why we're here",
+  "about.v1.title": "Solidarity",
   "about.v1.body":
-    "We don't do the \"we're all family here\" line. LottaComs is a community of people who chose each other — that's more meaningful, and more honest.",
-  "about.v2.title": "Honest about our limits",
+    "We look out for each other. Nobody gets left behind, and nobody is disposable.",
+  "about.v2.title": "Autonomy",
   "about.v2.body":
-    'We\'d rather say "we don\'t know" or "that\'s not for us" than overpromise. Scope creep and scope-stretch both come from the same insecurity.',
-  "about.v3.title": "Small and intentional",
+    "Everyone owns their work. Big decisions are made together — no one person calls all the shots.",
+  "about.v3.title": "Fairness",
   "about.v3.body":
-    "We're not trying to scale. We want to do fewer things well and work with people we'd genuinely recommend to a friend.",
+    "We protect everyone's interests equally. No favourites, no double standards.",
+
+  "about.vg2.label": "How we behave",
+  "about.v4.title": "Integrity",
+  "about.v4.body":
+    "We do what we say and say what we do. If something's wrong, we don't look the other way.",
+  "about.v5.title": "Transparency",
+  "about.v5.body":
+    "Good news or bad, we share it openly. Information and dialogue stay public by default.",
+  "about.v6.title": "Respect",
+  "about.v6.body":
+    "We value different perspectives and personalities. Empathy first, assumptions second.",
+
+  "about.vg3.label": "How we grow",
+  "about.v7.title": "Craftsmanship",
+  "about.v7.body":
+    "We take pride in what we deliver. No half-finished work, no cutting corners.",
+  "about.v8.title": "Sustainability",
+  "about.v8.body":
+    "We do enough, use enough, grow enough. We'd rather develop steadily than chase scale.",
+  "about.v9.title": "Resilience",
+  "about.v9.body":
+    "We stay flexible, plan for the unexpected, and adapt when the situation changes.",
 
   // ── Contact ─────────────────────────────────────────────────
   "contact.meta.title": "Contact",
