@@ -13,8 +13,16 @@
     }
   },
   "mounts": [
-    "source=${localEnv:HOME}/.claude,target=/home/node/.claude,type=bind,consistency=cached",
-    "source=${localEnv:HOME}/Projects/claude-skills,target=/home/node/claude-skills,type=bind,consistency=cached"
+    {
+      "source": "${localEnv:HOME}/.claude",
+      "target": "/home/node/.claude",
+      "type": "bind"
+    },
+    {
+      "source": "${localEnv:HOME}/Projects/claude-skills",
+      "target": "/home/node/claude-skills",
+      "type": "bind"
+    }
   ],
   "remoteEnv": {
     "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"

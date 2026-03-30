@@ -114,34 +114,61 @@ const en = {
 
   "services.what.heading": "What we do",
   "services.what.body1":
-    "We help technology companies find and place technical talent — software engineers, platform and infrastructure specialists, engineering leaders, and more.",
+    "We recruit technical and business talent for software companies — engineers, analysts, designers, product and delivery managers, and senior leadership. We operate across Vietnam and Japan.",
   "services.what.body2":
     "We don't shotgun CVs. We take time to understand your team, your culture, and what a good hire looks like for the role. Then we go and find that person.",
   "services.who.heading": "Who it's for",
-  "services.who.i1": "Engineering-led startups moving fast",
-  "services.who.i2": "Scale-ups building out a technical function",
-  "services.who.i3": "Established teams replacing or expanding key roles",
-  "services.who.i4": "Companies struggling with niche or senior searches",
+  "services.who.i1":
+    "Teams looking for senior, specialist, or leadership hires",
+  "services.who.i2": "Companies with a presence in Vietnam or Japan",
+  "services.who.i3":
+    "Organisations expanding their technical or management function",
+  "services.who.i4": "Anyone stuck on a search that's taken too long already",
 
   "services.how.eyebrow": "How it works",
-  "services.how.heading": "Simple by design",
+  "services.how.heading": "What to expect",
   "services.how.s1.num": "01",
-  "services.how.s1.title": "We listen first",
+  "services.how.s1.title": "Agree on terms",
   "services.how.s1.body":
-    "A no-pressure call to understand the role, your team dynamics, and what success looks like. No forms, no tick-boxes.",
+    "We sign a service contract before starting any search — no ambiguity about scope, fee, or warranty.",
   "services.how.s2.num": "02",
-  "services.how.s2.title": "We go looking",
+  "services.how.s2.title": "Share the brief",
   "services.how.s2.body":
-    "We use our network and do real outreach — not just the people actively job-hunting. The best candidates usually aren't.",
+    "You send us the job description and any context that helps us understand the role and your team.",
   "services.how.s3.num": "03",
-  "services.how.s3.title": "You meet real matches",
+  "services.how.s3.title": "We find candidates",
   "services.how.s3.body":
-    "We only put forward candidates who genuinely fit what you described — not whoever's available. You get a small shortlist of quality over a long list of maybes.",
+    "We submit shortlisted résumés within 3–7 working days.",
+  "services.how.s4.num": "04",
+  "services.how.s4.title": "You review",
+  "services.how.s4.body":
+    "Accept or pass on each résumé within 3 working days.",
+  "services.how.s5.num": "05",
+  "services.how.s5.title": "Interview",
+  "services.how.s5.body":
+    "You interview accepted candidates. We coordinate scheduling (2–3 days' notice) and handle communication on your behalf.",
+  "services.how.s6.num": "06",
+  "services.how.s6.title": "Offer",
+  "services.how.s6.body":
+    "Share your decision within 3 working days. We can advise on offer terms and negotiate with the candidate on your behalf.",
+  "services.how.s7.num": "07",
+  "services.how.s7.title": "Done",
+  "services.how.s7.body":
+    "Once the candidate accepts, we ask you to send the official offer letter. The fee is due on their start date.",
+
+  "services.fee.eyebrow": "Pricing",
+  "services.fee.heading": "One fee. No surprises.",
+  "services.fee.label": "Service fee",
+  "services.fee.body":
+    "One-time fee of 1-1.5 times the hire's gross monthly salary (before tax) based on position, charged on their first day.",
+  "services.warranty.label": "60-day warranty",
+  "services.warranty.body":
+    "If the hire resigns or is dismissed for cause within 60 days, we'll find a replacement at no charge — or refund 50% of the fee. No warranty applies to replacement hires.",
 
   "services.roles.eyebrow": "Specialisms",
   "services.roles.heading": "Roles we recruit for",
   "services.roles.body":
-    "Our focus is technical and leadership roles at software companies. We work to understand the requirements well enough to find people who'll thrive in them.",
+    "We cover technical roles across the stack, as well as leadership, product, and business functions. Not sure if your role is in scope? Just ask.",
 
   // ── About ───────────────────────────────────────────────────
   "about.meta.title": "About",
@@ -154,7 +181,7 @@ const en = {
 
   "about.story.heading": "The story",
   "about.story.p1":
-    "Both of us left the corporate world for the same reason: the overhead wasn't worth it. The politics, the performative busyness, the gap between what the work actually required and what the organisation demanded — it wears you down.",
+    "Both of us left the corporate world for the same reason: the overhead wasn't worth it. The politics, the dramas, the bureaucracy, the pressure to do more with less, the mismatch between what you'd like to do and what you have to do — it wears you down.",
   "about.story.p2":
     "LottaComs is what came after. One of us builds software. The other places people. We're not trying to become a large agency or a high-growth startup. We're building the kind of place we'd want to work.",
   "about.story.p3":
@@ -211,10 +238,10 @@ const en = {
   "contact.other.heading": "Other ways to reach us",
   "contact.email.title": "Email",
   "contact.email.body": "We aim to reply within one business day.",
-  "contact.li1.title": "LinkedIn — Founder One",
+  "contact.li1.title": "LinkedIn — Founder",
   "contact.li1.body": "Connect directly on LinkedIn.",
-  "contact.li2.title": "LinkedIn — Founder Two",
-  "contact.li2.body": "Connect directly on LinkedIn.",
+  "contact.li2.title": "Facebook — Founder",
+  "contact.li2.body": "Connect directly on Facebook.",
   "contact.note.headsup": "Heads up:",
   "contact.note.body":
     "We're a small team, so responses may take a day or two. We'll always get back to you — no message goes unanswered.",

@@ -10,16 +10,24 @@ const t = useTranslations(lang);
 const roles = [
   "Software Engineer",
   "Senior / Staff Engineer",
-  "Platform & Infrastructure",
-  "DevOps / SRE",
-  "Engineering Manager",
-  "Head of Engineering",
-  "CTO / VP Engineering",
   "Backend Engineer",
   "Full-Stack Engineer",
   "Data Engineer",
   "ML / AI Engineer",
   "Security Engineer",
+  "Platform & Infrastructure",
+  "DevOps / SRE",
+  "Business Analyst",
+  "Designer",
+  "Product Manager",
+  "Delivery Manager",
+  "Account Manager",
+  "Engineering Manager",
+  "Head of Engineering",
+  "CTO / VP Engineering",
+  "C-level Executive",
+  "Marketing",
+  "Operations & Management",
 ];
 ---
 
@@ -81,24 +89,54 @@ const roles = [
         </p>
         <h2 class="text-3xl font-bold text-gray-900">{t("services.how.heading")}</h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+      <ol class="space-y-8 max-w-2xl mx-auto">
         {[
           { num: t("services.how.s1.num"), title: t("services.how.s1.title"), body: t("services.how.s1.body") },
           { num: t("services.how.s2.num"), title: t("services.how.s2.title"), body: t("services.how.s2.body") },
           { num: t("services.how.s3.num"), title: t("services.how.s3.title"), body: t("services.how.s3.body") },
+          { num: t("services.how.s4.num"), title: t("services.how.s4.title"), body: t("services.how.s4.body") },
+          { num: t("services.how.s5.num"), title: t("services.how.s5.title"), body: t("services.how.s5.body") },
+          { num: t("services.how.s6.num"), title: t("services.how.s6.title"), body: t("services.how.s6.body") },
+          { num: t("services.how.s7.num"), title: t("services.how.s7.title"), body: t("services.how.s7.body") },
         ].map(({ num, title, body }) => (
-          <div class="bg-white rounded-2xl p-8 border border-brand-green-100">
-            <p class="text-4xl font-bold text-brand-green-100 mb-4">{num}</p>
-            <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
-          </div>
+          <li class="flex gap-6 items-start">
+            <span class="text-3xl font-bold text-brand-green-200 w-10 shrink-0 text-right leading-tight pt-0.5">
+              {num}
+            </span>
+            <div>
+              <h3 class="text-base font-bold text-gray-900 mb-1">{title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+            </div>
+          </li>
         ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- Pricing & Warranty -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-20">
+      <div class="text-center mb-14">
+        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+          {t("services.fee.eyebrow")}
+        </p>
+        <h2 class="text-3xl font-bold text-gray-900">{t("services.fee.heading")}</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">{t("services.fee.label")}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{t("services.fee.body")}</p>
+        </div>
+        <div class="bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100">
+          <h3 class="text-lg font-bold text-gray-900 mb-3">{t("services.warranty.label")}</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">{t("services.warranty.body")}</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Roles we recruit for -->
-  <section class="bg-white">
+  <section class="bg-brand-green-50 border-t border-brand-green-100">
     <div class="max-w-6xl mx-auto px-6 py-20">
       <div class="text-center mb-12">
         <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
@@ -109,7 +147,7 @@ const roles = [
       </div>
       <div class="flex flex-wrap gap-3 justify-center max-w-3xl mx-auto">
         {roles.map((role) => (
-          <span class="bg-brand-green-50 text-brand-green-800 border border-brand-green-100 rounded-full px-4 py-2 text-sm font-medium">
+          <span class="bg-white text-brand-green-800 border border-brand-green-100 rounded-full px-4 py-2 text-sm font-medium">
             {role}
           </span>
         ))}
