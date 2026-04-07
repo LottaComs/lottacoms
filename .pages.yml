@@ -3,7 +3,7 @@ content:
   - name: jobs
     label: Jobs
     type: collection
-    path: jobs
+    path: content/jobs
     fields:
       - name: title
         type: string
