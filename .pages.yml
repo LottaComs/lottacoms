@@ -1,0 +1,19 @@
+media: media
+content:
+  - name: jobs
+    label: Jobs
+    type: collection
+    path: jobs
+    fields:
+      - name: title
+        type: string
+      - name: salary
+        type: string
+      - name: location
+        type: string
+      - name: description
+        type: rich-text
+      - name: requirement
+        type: rich-text
+      - name: benefits
+        type: rich-text
