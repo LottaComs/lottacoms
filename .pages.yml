@@ -13,7 +13,7 @@ content:
         type: string
       - name: description
         type: rich-text
-      - name: requirement
+      - name: requirements
         type: rich-text
       - name: benefits
         type: rich-text
