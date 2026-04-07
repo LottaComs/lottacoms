@@ -115,7 +115,7 @@ const en = {
   "services.how.s1.num": "01",
   "services.how.s1.title": "Agree on terms",
   "services.how.s1.body":
-    "We sign a service contract before starting any search — no ambiguity about scope, fee, or warranty.",
+    "We inform you of our contract terms before starting any search — no ambiguity about scope, fee, or warranty.",
   "services.how.s2.num": "02",
   "services.how.s2.title": "Share the brief",
   "services.how.s2.body":
@@ -170,7 +170,7 @@ const en = {
   "about.story.p2":
     "LottaComs is what came after. One of us builds software. The other places people. We're not trying to become a large agency or a high-growth startup. We're building the kind of place we'd want to work.",
   "about.story.p3":
-    "That means staying small, being honest about what we can and can't do, and treating every client and candidate like a real person rather than a transaction. It's not a radical idea — it's just harder to hold onto inside a big company.",
+    "That means staying small, being honest about what we can and can't do, and trying to treat every client and candidate like a real person rather than a transaction. It's not a radical idea — it's just harder to hold onto inside a big company.",
   "about.story.p4":
     "We think of LottaComs as a village: people who've opted out of the corporate game and want to build something on their own terms, with people they trust.",
 
