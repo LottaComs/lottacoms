@@ -27,9 +27,10 @@ npm run preview   # preview the build locally
 
 ## Deployment
 
-Push to GitHub → Netlify auto-deploys. Config in [netlify.toml](netlify.toml):
+Push to GitHub → Cloudflare Pages auto-deploys.
 - Build command: `npm run build`
-- Publish dir: `dist`
+- Output dir: `dist`
+- Security headers in [public/_headers](public/_headers)
 
 ## Constraints
 
@@ -38,7 +39,7 @@ Push to GitHub → Netlify auto-deploys. Config in [netlify.toml](netlify.toml):
 
 ## Contact form
 
-Use Netlify Forms — no backend needed. Add `data-netlify="true"` to the `<form>` element and a hidden `<input type="hidden" name="form-name" value="..." />`. Netlify detects and handles it at build time.
+Uses [Formspree](https://formspree.io) — no backend needed. The form `action` points to a Formspree endpoint. A hidden `_next` field redirects to `/success/` after submission. A hidden `_gotcha` field acts as a honeypot for spam.
 
 ---
 

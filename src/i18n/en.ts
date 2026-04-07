@@ -254,6 +254,27 @@ const en = {
   "contact.note.headsup": "Heads up:",
   "contact.note.body":
     "We're a small team, so responses may take a day or two. We'll always get back to you — no message goes unanswered.",
+
+  // ── Jobs ─────────────────────────────────────────────────────
+  "nav.jobs": "Jobs",
+  "jobs.meta.title": "Jobs",
+  "jobs.meta.description":
+    "Browse open positions from our clients. We recruit technical and leadership talent for software companies in Vietnam and Japan.",
+  "jobs.header.eyebrow": "Job board",
+  "jobs.header.heading": "Roles we're hiring for",
+  "jobs.header.body":
+    "These are open positions at our clients' companies. We handle the recruiting — if something catches your eye, we'll guide you through the process.",
+  "jobs.search.placeholder": "Search by title, location...",
+  "jobs.search.noresults": "No positions match your search.",
+  "jobs.empty": "No open positions right now. Check back soon.",
+  "jobs.card.salary": "Salary",
+  "jobs.card.location": "Location",
+  "jobs.card.view": "View details",
+  "jobs.detail.description": "Description",
+  "jobs.detail.requirements": "Requirements",
+  "jobs.detail.benefits": "Benefits",
+  "jobs.detail.apply": "I'm interested",
+  "jobs.detail.back": "← Back to all jobs",
 } as const;
 
 export default en;

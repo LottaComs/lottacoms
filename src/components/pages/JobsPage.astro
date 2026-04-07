@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations, localePath } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+import { getJobs } from "../../lib/jobs";
+import JobSearch from "../JobSearch";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const jobs = getJobs();
+const jobsBasePath = localePath(lang, "/jobs");
+---
+
+<BaseLayout
+  title={t("jobs.meta.title")}
+  description={t("jobs.meta.description")}
+  lang={lang}
+>
+  <!-- Header -->
+  <section class="bg-brand-green-50 border-b border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <p
+        class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3"
+      >
+        {t("jobs.header.eyebrow")}
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        {t("jobs.header.heading")}
+      </h1>
+      <p class="text-xl text-gray-600 max-w-2xl">
+        {t("jobs.header.body")}
+      </p>
+    </div>
+  </section>
+
+  <!-- Job listings with search -->
+  <section class="bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <JobSearch
+        client:load
+        jobs={jobs}
+        lang={lang}
+        jobsBasePath={jobsBasePath}
+        labels={{
+          searchPlaceholder: t("jobs.search.placeholder"),
+          noResults: t("jobs.search.noresults"),
+          empty: t("jobs.empty"),
+          salary: t("jobs.card.salary"),
+          location: t("jobs.card.location"),
+          viewDetails: t("jobs.card.view"),
+        }}
+      />
+    </div>
+  </section>
+</BaseLayout>

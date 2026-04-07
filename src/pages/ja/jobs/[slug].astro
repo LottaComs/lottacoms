@@ -1,0 +1,14 @@
+---
+import JobDetailPage from "../../../components/pages/JobDetailPage.astro";
+import { getJobs } from "../../../lib/jobs";
+
+export function getStaticPaths() {
+  return getJobs().map((job) => ({
+    params: { slug: job.slug },
+    props: { job },
+  }));
+}
+
+const { job } = Astro.props;
+---
+<JobDetailPage lang="ja" job={job} />

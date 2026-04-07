@@ -39,17 +39,12 @@ const t = useTranslations(lang);
             {t("contact.form.heading")}
           </h2>
           <form
-            name="contact"
             method="POST"
-            action="/success/"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
+            action="https://formspree.io/f/mgopdnjy"
             class="space-y-6"
           >
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>Don't fill this out: <input name="bot-field" /></label>
-            </p>
+            <input type="hidden" name="_next" value="/success/" />
+            <input type="text" name="_gotcha" style="display:none" />
 
             <div>
               <label

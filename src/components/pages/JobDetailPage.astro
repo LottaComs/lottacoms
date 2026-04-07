@@ -1,0 +1,131 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { useTranslations, localePath } from "../../i18n/utils";
+import type { Lang } from "../../i18n/utils";
+import type { Job } from "../../lib/jobs";
+
+interface Props {
+  lang: Lang;
+  job: Job;
+}
+const { lang, job } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<BaseLayout
+  title={job.title}
+  description={job.description.slice(0, 160)}
+  lang={lang}
+>
+  <section class="bg-brand-green-50 border-b border-brand-green-100">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <a
+        href={localePath(lang, "/jobs")}
+        class="text-sm font-medium text-brand-green-700 hover:text-brand-green-800 transition-colors mb-4 inline-block"
+      >
+        {t("jobs.detail.back")}
+      </a>
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">{job.title}</h1>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-gray-600">
+        {
+          job.location && (
+            <span class="flex items-center gap-1.5">
+              <svg
+                class="w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              {job.location}
+            </span>
+          )
+        }
+        {
+          job.salary && (
+            <span class="flex items-center gap-1.5">
+              <svg
+                class="w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                />
+              </svg>
+              {job.salary}
+            </span>
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white">
+    <div class="max-w-3xl mx-auto px-6 py-16 space-y-12">
+      {
+        job.description && (
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              {t("jobs.detail.description")}
+            </h2>
+            <div
+              class="prose prose-gray max-w-none"
+              set:html={job.description}
+            />
+          </div>
+        )
+      }
+
+      {
+        job.requirements && (
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              {t("jobs.detail.requirements")}
+            </h2>
+            <div
+              class="prose prose-gray max-w-none"
+              set:html={job.requirements}
+            />
+          </div>
+        )
+      }
+
+      {
+        job.benefits && (
+          <div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              {t("jobs.detail.benefits")}
+            </h2>
+            <div class="prose prose-gray max-w-none" set:html={job.benefits} />
+          </div>
+        )
+      }
+
+      <div class="pt-4">
+        <a
+          href={localePath(lang, "/contact")}
+          class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+        >
+          {t("jobs.detail.apply")}
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
