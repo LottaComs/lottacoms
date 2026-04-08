@@ -7,6 +7,8 @@ content:
     fields:
       - name: title
         type: string
+      - name: summary
+        type: string
       - name: salary
         type: string
       - name: location
