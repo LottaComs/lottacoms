@@ -9,15 +9,19 @@ content:
         type: string
       - name: title
         type: string
-      - name: summary
-        type: string
       - name: salary
         type: string
       - name: location
         type: string
+      - name: summary
+        type: string
+      - name: tags
+        type: string
+        list: true
       - name: description
         type: rich-text
       - name: requirements
         type: rich-text
       - name: benefits
         type: rich-text
+    filename: "{number}-{title}.md"
