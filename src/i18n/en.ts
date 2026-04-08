@@ -256,8 +256,8 @@ const en = {
     "We're a small team, so responses may take a day or two. We'll always get back to you — no message goes unanswered.",
 
   // ── Jobs ─────────────────────────────────────────────────────
-  "nav.jobs": "Jobs",
-  "jobs.meta.title": "Jobs",
+  "nav.jobs": "Job Opportunities",
+  "jobs.meta.title": "Job Opportunities",
   "jobs.meta.description":
     "Browse open positions from our clients. We recruit technical and leadership talent for software companies in Vietnam and Japan.",
   "jobs.header.eyebrow": "Job board",
@@ -274,7 +274,7 @@ const en = {
   "jobs.detail.requirements": "Requirements",
   "jobs.detail.benefits": "Benefits",
   "jobs.detail.apply": "Apply now",
-  "jobs.detail.back": "← Back to all jobs",
+  "jobs.detail.back": "← Back to all opportunities",
   "jobs.card.apply": "Apply now",
 
   // ── Job Application Form ────────────────────────────────────

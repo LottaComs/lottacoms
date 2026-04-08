@@ -7,6 +7,7 @@ const vn: Partial<Record<UIKeys, string>> = {
   "nav.contact": "Liên hệ",
   "nav.aria.home": "Trang chủ LottaComs",
   "nav.aria.toggle": "Chuyển đổi menu",
+  "nav.jobs": "Cơ hội việc làm",
   "footer.cta.button": "Liên hệ ngay",
   "footer.tagline": "Cộng đồng là gốc rễ.",
 };

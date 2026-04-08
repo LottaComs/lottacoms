@@ -7,6 +7,7 @@ const ja: Partial<Record<UIKeys, string>> = {
   "nav.contact": "お問い合わせ",
   "nav.aria.home": "LottaComsホーム",
   "nav.aria.toggle": "メニューを切り替える",
+  "nav.jobs": "求人情報",
   "footer.cta.button": "お問い合わせ",
   "footer.tagline": "大切なのは、つながり。",
 };
