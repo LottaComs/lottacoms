@@ -26,7 +26,8 @@ export default function JobSearch({ jobs, lang, labels, jobsBasePath }: Props) {
       (job) =>
         job.title.toLowerCase().includes(q) ||
         job.location.toLowerCase().includes(q) ||
-        job.salary.toLowerCase().includes(q),
+        job.summary.toLowerCase().includes(q) ||
+        job.tags.some((tag) => tag.toLowerCase().includes(q)),
     );
   }, [jobs, query]);
 
@@ -80,6 +81,15 @@ export default function JobSearch({ jobs, lang, labels, jobsBasePath }: Props) {
                   </span>
                 )}
               </div>
+              {job.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {job.tags.map((tag) => (
+                    <span key={tag} className="inline-block bg-brand-green-100 text-brand-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
               <div className="flex items-center gap-4 mt-4">
                 <span className="text-sm font-medium text-brand-green-700 group-hover:underline">
                   {labels.viewDetails} →

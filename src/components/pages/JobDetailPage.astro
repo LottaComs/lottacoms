@@ -94,6 +94,15 @@ const t = useTranslations(lang);
         {job.summary && (
           <p class="text-xl text-gray-600">{job.summary}</p>
         )}
+        {job.tags && job.tags.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {job.tags.map((tag) => (
+              <span class="inline-flex items-center bg-brand-green-100 text-brand-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full leading-snug">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   </section>
@@ -153,6 +162,7 @@ const t = useTranslations(lang);
           <input type="text" name="_gotcha" style="display:none" />
           <input type="hidden" name="_subject" value={`Job application: ${job.title}`} />
           <input type="hidden" name="position" value={job.title} />
+          <input type="hidden" name="job_number" value={job.slug} />
 
           <!-- Name -->
           <div>
