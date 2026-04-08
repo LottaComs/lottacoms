@@ -2,11 +2,11 @@
 
 ## Project
 
-Company landing page for LottaComs. Fully static site with a contact form. No server-side code.
+Company landing page for LottaComs with self-hosted form handling.
 
 ## Stack
 
-- **Astro 4** — site framework, `output: "static"`
+- **Astro 4** — site framework, `output: "hybrid"` (static pages + server API routes)
 - **React 18** — available for interactive components via `@astrojs/react`
 - **Tailwind CSS 3** — styling via `@astrojs/tailwind`
 - **TypeScript** — strict mode
@@ -34,12 +34,27 @@ Push to GitHub → Cloudflare Pages auto-deploys.
 
 ## Constraints
 
-- Keep `output: "static"` in [astro.config.mjs](astro.config.mjs) — no SSR, no server routes
-- All pages must render to static HTML at build time
+- Keep `output: "hybrid"` in [astro.config.mjs](astro.config.mjs) — pages are static by default, server routes opt in with `export const prerender = false`
+- All pages must render to static HTML at build time; only API routes under `src/pages/api/` run on the server
 
-## Contact form
+## Form handling
 
-Uses [Formspree](https://formspree.io) — no backend needed. The form `action` points to a Formspree endpoint. A hidden `_next` field redirects to `/success/` after submission. A hidden `_gotcha` field acts as a honeypot for spam.
+Self-hosted via Astro server API routes running on the Cloudflare Worker.
+
+- **Contact form** → `POST /api/contact` → sends email to `info@lottacoms.com` via Resend
+- **Job application form** → `POST /api/apply` → stores attachments in R2, sends email to `tuyendung@lottacoms.com` via Resend
+- Spam protection: hidden `_gotcha` honeypot field
+- After submission, both endpoints redirect to `/success/`
+
+### Required Cloudflare bindings
+
+| Binding | Type | Purpose |
+|---|---|---|
+| `SUBMISSIONS_BUCKET` | R2 bucket | Stores job application file attachments |
+| `RESEND_API_KEY` | Secret | Resend transactional email API key |
+| `CONTACT_EMAIL_TO` | Var | Contact form recipient (`info@lottacoms.com`) |
+| `APPLY_EMAIL_TO` | Var | Application form recipient (`tuyendung@lottacoms.com`) |
+| `EMAIL_FROM` | Var | Sender address for outbound emails |
 
 ---
 

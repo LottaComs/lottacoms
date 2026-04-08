@@ -1,17 +1,28 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "lottacoms",
-  "compatibility_date": "2026-04-07",
-  "observability": {
-    "enabled": true
-  },
-  "main": "dist/_worker.js/index.js",
-  "compatibility_flags": [
-    "global_fetch_strictly_public",
-    "nodejs_compat"
-  ],
-  "assets": {
-    "binding": "ASSETS",
-    "directory": "dist"
-  }
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "lottacoms",
+	"compatibility_date": "2026-04-07",
+	"observability": {
+		"enabled": true
+	},
+	"main": "dist/_worker.js/index.js",
+	"compatibility_flags": [
+		"global_fetch_strictly_public",
+		"nodejs_compat"
+	],
+	"assets": {
+		"binding": "ASSETS",
+		"directory": "dist"
+	},
+	"r2_buckets": [
+		{
+			"binding": "SUBMISSIONS_BUCKET",
+			"bucket_name": "lottacoms-submissions"
+		}
+	],
+	"vars": {
+		"CONTACT_EMAIL_TO": "info@lottacoms.com",
+		"APPLY_EMAIL_TO": "tuyendung@lottacoms.com",
+		"EMAIL_FROM": "LottaComs <forms@lottacoms.com>"
+	}
 }

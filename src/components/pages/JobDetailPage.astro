@@ -154,11 +154,10 @@ const t = useTranslations(lang);
         </h2>
         <form
           method="POST"
-          action="https://formspree.io/f/mgopdnjy"
+          action="/api/apply"
           enctype="multipart/form-data"
           class="space-y-6"
         >
-          <input type="hidden" name="_next" value="/success/" />
           <input type="text" name="_gotcha" style="display:none" />
           <input type="hidden" name="_subject" value={`Job application: ${job.title}`} />
           <input type="hidden" name="position" value={job.title} />

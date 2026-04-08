@@ -7,11 +7,11 @@ LottaComs is a company landing page serving two distinct audiences: software buy
 **Goals:**
 - Communicate what LottaComs is and who it's for within 5 seconds of landing
 - Convert visitors to contact form submissions
+- Attract talent through job listings
 - Build trust for due-diligence visitors
-- Remain polished and lean — 5 pages maximum
 
 **Stack:** Astro 4 · React 18 · Tailwind CSS 3 · TypeScript (strict)
-**Deployment:** Netlify (static, no SSR)
+**Deployment:** Cloudflare Pages (hybrid — static pages + server API routes on Cloudflare Workers)
 
 ---
 
@@ -68,32 +68,48 @@ Builds trust for visitors doing due diligence before reaching out.
 
 ---
 
+### Jobs `/jobs`
+
+Lists open positions. Each job is a Markdown file in `src/content/jobs/`.
+
+**Sections:**
+1. **Job Listing** — Cards for each open position showing title, location, type, and tags
+2. **Job Detail** (`/jobs/[slug]`) — Full job description with inline application form
+
+---
+
 ### Contact `/contact`
 
 Conversion page. Keep it simple and frictionless.
 
 **Sections:**
-1. **Contact Form** (Netlify Forms)
+1. **Contact Form** — `POST /api/contact`
    - Name
    - Email
    - Topic (dropdown: Products / Talent / Other)
    - Message
+   - Hidden `_gotcha` honeypot for spam protection
 2. **Direct Email** — displayed for visitors who prefer it
-3. **LinkedIn Links** — for both founders
+3. **Social Links** — for both founders
 
-**Implementation note:** Use `data-netlify="true"` on the `<form>` element and a hidden `<input type="hidden" name="form-name" value="contact" />`. No backend required.
+---
+
+### Success `/success`
+
+Confirmation page shown after successful form submission (contact or job application). Redirected to via 303 from the API routes.
 
 ---
 
 ## Navigation
 
 ```
-LottaComs logo   |   Products   Services   About   [Contact]
+LottaComs logo   |   Products   Services   Jobs   About   [Contact]
 ```
 
 - Logo links to `/`
 - Contact rendered as a highlighted button (not a plain link) to keep it prominent
 - Mobile: hamburger menu collapsing all nav links
+- Language switcher (EN / JA / VN) in both desktop and mobile nav
 
 ---
 
@@ -108,16 +124,31 @@ LottaComs logo   |   Products   Services   About   [Contact]
 - Prefer `.astro` components for static content
 - Use React only where interactivity is required (e.g., contact form validation, mobile nav toggle)
 
+### Internationalization (i18n)
+- Three locales: English (default, unprefixed), Japanese (`/ja/`), Vietnamese (`/vn/`)
+- All pages are available in all locales
+- Translations managed via `src/i18n/`
+
 ### Performance & Constraints
-- `output: "static"` must remain in `astro.config.mjs` — no SSR, no server routes
-- All pages must render to static HTML at build time
-- No external runtime dependencies beyond what's already in the stack
+- `output: "hybrid"` in `astro.config.mjs` — pages are static by default, server routes opt in with `export const prerender = false`
+- All pages must render to static HTML at build time; only API routes under `src/pages/api/` run on the server
 
 ### Accessibility
 - Semantic HTML throughout
 - All images require descriptive `alt` text
 - Form fields require associated `<label>` elements
 - Sufficient color contrast (WCAG AA minimum)
+
+---
+
+## Form Handling
+
+Forms are self-hosted via server API routes (not a third-party service). See CLAUDE.md for implementation details and required Cloudflare bindings.
+
+- **Contact form** (`POST /api/contact`) — name, email, topic, message → notification email to team
+- **Job application form** (`POST /api/apply`) — name, email, message, file attachments → notification email with files to recruiting team
+- Spam protection via hidden honeypot field on both forms
+- Both forms redirect to `/success/` after submission
 
 ---
 
