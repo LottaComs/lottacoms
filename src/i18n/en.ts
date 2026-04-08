@@ -263,7 +263,7 @@ const en = {
   "jobs.header.eyebrow": "Job board",
   "jobs.header.heading": "Roles we're hiring for",
   "jobs.header.body":
-    "These are open positions at our clients' companies. We handle the recruiting — if something catches your eye, we'll guide you through the process.",
+    "These are open positions at our clients' companies. If something catches your eye, we'll guide you through the process.",
   "jobs.search.placeholder": "Search by title, location...",
   "jobs.search.noresults": "No positions match your search.",
   "jobs.empty": "No open positions right now. Check back soon.",
@@ -284,9 +284,11 @@ const en = {
   "jobs.apply.email": "Email",
   "jobs.apply.email.ph": "you@example.com",
   "jobs.apply.message": "Message",
-  "jobs.apply.message.ph": "Tell us a bit about yourself, or ask us anything about the role...",
+  "jobs.apply.message.ph":
+    "Tell us a bit about yourself, or ask us anything about the role...",
   "jobs.apply.attachment": "Attachments",
-  "jobs.apply.attachment.hint": "Upload your CV or other relevant files (max 10 MB total)",
+  "jobs.apply.attachment.hint":
+    "Upload your CV or other relevant files (max 10 MB total)",
   "jobs.apply.submit": "Submit application",
 } as const;
 
