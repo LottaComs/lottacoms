@@ -5,6 +5,8 @@ content:
     type: collection
     path: content/jobs
     fields:
+      - name: code
+        type: string
       - name: title
         type: string
       - name: summary
