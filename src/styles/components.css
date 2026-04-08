@@ -1,0 +1,119 @@
+/*
+ * Reusable component classes — built from the design tokens in tailwind.config.mjs.
+ *
+ * These live in @layer components so they can still be overridden by utilities
+ * (e.g. `btn-primary mt-8` works as expected).
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* ------------------------------------------------------------------ */
+  /*  Layout                                                            */
+  /* ------------------------------------------------------------------ */
+
+  .container-page {
+    @apply max-w-6xl mx-auto px-6;
+  }
+
+  /** Light-green accent background — pair with border-b, border-y, border-t as needed */
+  .section-accent {
+    @apply bg-brand-green-50 border-brand-green-100;
+  }
+
+  /** Page-header band (accent + bottom border) */
+  .section-header {
+    @apply section-accent border-b;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Typography                                                        */
+  /* ------------------------------------------------------------------ */
+
+  /** Eyebrow / kicker label above section headings */
+  .eyebrow {
+    @apply text-sm font-medium text-brand-green-600 uppercase tracking-wider;
+  }
+
+  /** Inline text link — green, underlines on hover */
+  .link {
+    @apply text-sm font-medium text-brand-green-700
+           hover:text-brand-green-800 hover:underline transition-colors;
+  }
+
+  /* Headings — size + weight + color in one token */
+  .heading-page    { @apply text-4xl font-bold text-content; }
+  .heading-section { @apply text-3xl font-bold text-content; }
+  .heading-sub     { @apply text-2xl font-bold text-content; }
+  .heading-card    { @apply text-xl  font-bold text-content; }
+
+  /** Subtitle line below a page heading */
+  .subtitle-page { @apply text-xl text-content-body; }
+
+  /** Body copy — default and small variants */
+  .body-text { @apply text-content-body leading-relaxed; }
+  .body-sm   { @apply text-content-body text-sm leading-relaxed; }
+
+  /* ------------------------------------------------------------------ */
+  /*  Buttons                                                           */
+  /* ------------------------------------------------------------------ */
+
+  .btn-primary {
+    @apply inline-block font-semibold px-6 py-3 rounded-lg transition-colors
+           bg-brand-green-700 text-white hover:bg-brand-green-800;
+  }
+
+  .btn-secondary {
+    @apply inline-block font-semibold px-6 py-3 rounded-lg transition-colors
+           border-2 border-brand-green-600 text-brand-green-700
+           hover:bg-brand-green-100;
+  }
+
+  .btn-gold {
+    @apply inline-block font-semibold px-6 py-3 rounded-lg transition-colors
+           bg-brand-gold text-brand-green-800 hover:bg-brand-gold-dark;
+  }
+
+  .btn-sm {
+    @apply inline-block font-semibold text-sm px-4 py-2 rounded-lg transition-colors
+           bg-brand-green-700 text-white hover:bg-brand-green-800;
+  }
+
+  .btn-sm-gold {
+    @apply inline-block font-semibold text-sm px-4 py-2 rounded-lg transition-colors
+           bg-brand-gold text-brand-green-800 hover:bg-brand-gold-dark;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Form fields                                                       */
+  /* ------------------------------------------------------------------ */
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg transition
+           border border-divider bg-white
+           text-content placeholder-content-subtle
+           focus:outline-none focus:ring-2 focus:ring-brand-green-500
+           focus:border-transparent;
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  Cards                                                             */
+  /* ------------------------------------------------------------------ */
+
+  .card-accent {
+    @apply bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100;
+  }
+
+  /** Centered icon container — pair with size (w-10 h-10), rounding, and color */
+  .icon-badge {
+    @apply flex items-center justify-center shrink-0;
+  }
+
+  /** Small pill label for tags / categories */
+  .tag {
+    @apply inline-flex items-center bg-brand-green-100 text-brand-green-800
+           font-medium px-2.5 py-0.5 rounded-full;
+  }
+}

@@ -110,6 +110,7 @@ Self-hosted via Astro server API routes running on the Cloudflare Worker.
 - Fetch external data (CMS, API) at build time in the component frontmatter, not at runtime in the browser.
 - Keep `src/pages/` flat and predictable; one file = one route. Shared layouts live in `src/layouts/`, reusable UI in `src/components/`.
 - Images: use Astro's `<Image />` component (`astro:assets`) for automatic optimisation and format conversion.
+- No inline SVG icons or inline styles in page/component templates — extract SVGs into dedicated icon components under `src/components/icons/` and use semantic Tailwind classes or scoped `<style>` blocks. Exception: a truly one-off decorative SVG with no semantic meaning may stay inline.
 
 ## React conventions (within Astro)
 

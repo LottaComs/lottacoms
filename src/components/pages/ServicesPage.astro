@@ -40,14 +40,14 @@ const roles = [
   lang={lang}
 >
   <!-- Header -->
-  <section class="bg-brand-green-50 border-b border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
+  <section class="section-header">
+    <div class="container-page py-16">
       <p
-        class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3"
+        class="eyebrow mb-3"
       >
         {t("services.header.eyebrow")}
       </p>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="heading-page mb-4">
         {
           t("services.header.heading")
             .split("\n")
@@ -59,12 +59,12 @@ const roles = [
             ))
         }
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl mb-8">
+      <p class="subtitle-page max-w-2xl mb-8">
         {t("services.header.body")}
       </p>
       <a
         href={localePath(lang, "/contact")}
-        class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+        class="btn-primary"
       >
         {t("footer.cta.button")}
       </a>
@@ -73,21 +73,21 @@ const roles = [
 
   <!-- What & Who -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="grid md:grid-cols-2 gap-16">
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-5">
+          <h2 class="heading-sub mb-5">
             {t("services.what.heading")}
           </h2>
-          <p class="text-gray-600 leading-relaxed mb-4">
+          <p class="body-text mb-4">
             {t("services.what.body1")}
           </p>
-          <p class="text-gray-600 leading-relaxed">
+          <p class="body-text">
             {t("services.what.body2")}
           </p>
         </div>
         <div>
-          <h2 class="text-2xl font-bold text-gray-900 mb-5">
+          <h2 class="heading-sub mb-5">
             {t("services.who.heading")}
           </h2>
           <ul class="space-y-3">
@@ -100,7 +100,7 @@ const roles = [
               ].map((item) => (
                 <li class="flex gap-3 items-start">
                   <span class="text-brand-green-600 font-bold mt-0.5">—</span>
-                  <span class="text-gray-600">{item}</span>
+                  <span class="text-content-body">{item}</span>
                 </li>
               ))
             }
@@ -111,15 +111,15 @@ const roles = [
   </section>
 
   <!-- How it works -->
-  <section class="bg-brand-green-50 border-y border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+  <section class="section-accent border-y">
+    <div class="container-page py-20">
       <div class="text-center mb-14">
         <p
-          class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3"
+          class="eyebrow mb-3"
         >
           {t("services.how.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">
+        <h2 class="heading-section">
           {t("services.how.heading")}
         </h2>
       </div>
@@ -167,8 +167,8 @@ const roles = [
                 {num}
               </span>
               <div>
-                <h3 class="text-base font-bold text-gray-900 mb-1">{title}</h3>
-                <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+                <h3 class="text-base font-bold text-content mb-1">{title}</h3>
+                <p class="body-sm">{body}</p>
               </div>
             </li>
           ))
@@ -179,35 +179,35 @@ const roles = [
 
   <!-- Pricing & Warranty -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="text-center mb-14">
         <p
-          class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3"
+          class="eyebrow mb-3"
         >
           {t("services.fee.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">
+        <h2 class="heading-section">
           {t("services.fee.heading")}
         </h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
         <div
-          class="bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100"
+          class="card-accent"
         >
-          <h3 class="text-lg font-bold text-gray-900 mb-3">
+          <h3 class="text-lg font-bold text-content mb-3">
             {t("services.fee.label")}
           </h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+          <p class="body-sm">
             {t("services.fee.body")}
           </p>
         </div>
         <div
-          class="bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100"
+          class="card-accent"
         >
-          <h3 class="text-lg font-bold text-gray-900 mb-3">
+          <h3 class="text-lg font-bold text-content mb-3">
             {t("services.warranty.label")}
           </h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
+          <p class="body-sm">
             {t("services.warranty.body")}
           </p>
         </div>
@@ -216,18 +216,18 @@ const roles = [
   </section>
 
   <!-- Roles we recruit for -->
-  <section class="bg-brand-green-50 border-t border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+  <section class="section-accent border-t">
+    <div class="container-page py-20">
       <div class="text-center mb-12">
         <p
-          class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3"
+          class="eyebrow mb-3"
         >
           {t("services.roles.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">
+        <h2 class="heading-section">
           {t("services.roles.heading")}
         </h2>
-        <p class="text-gray-600 mt-3 max-w-xl mx-auto">
+        <p class="text-content-body mt-3 max-w-xl mx-auto">
           {t("services.roles.body")}
         </p>
       </div>

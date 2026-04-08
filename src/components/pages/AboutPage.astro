@@ -14,16 +14,16 @@ const t = useTranslations(lang);
   lang={lang}
 >
   <!-- Header -->
-  <section class="bg-brand-green-50 border-b border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-      <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+  <section class="section-header">
+    <div class="container-page py-16">
+      <p class="eyebrow mb-3">
         {t("about.header.eyebrow")}
       </p>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">{t("about.header.heading")}</h1>
-      <p class="text-xl text-gray-600 max-w-2xl mb-8">{t("about.header.body")}</p>
+      <h1 class="heading-page mb-4">{t("about.header.heading")}</h1>
+      <p class="subtitle-page max-w-2xl mb-8">{t("about.header.body")}</p>
       <a
         href={localePath(lang, "/contact")}
-        class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+        class="btn-primary"
       >
         {t("footer.cta.button")}
       </a>
@@ -32,10 +32,10 @@ const t = useTranslations(lang);
 
   <!-- Story -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">{t("about.story.heading")}</h2>
-        <div class="space-y-5 text-gray-600 leading-relaxed">
+        <h2 class="heading-sub mb-6">{t("about.story.heading")}</h2>
+        <div class="space-y-5 body-text">
           <p>{t("about.story.p1")}</p>
           <p>{t("about.story.p2")}</p>
           <p>{t("about.story.p3")}</p>
@@ -46,13 +46,13 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Founders -->
-  <section class="bg-brand-green-50 border-y border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+  <section class="section-accent border-y">
+    <div class="container-page py-20">
       <div class="text-center mb-14">
-        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        <p class="eyebrow mb-3">
           {t("about.founders.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">{t("about.founders.heading")}</h2>
+        <h2 class="heading-section">{t("about.founders.heading")}</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-10 max-w-3xl mx-auto">
         {[
@@ -60,12 +60,12 @@ const t = useTranslations(lang);
           { initials: "F2", name: t("about.f2.name"), role: t("about.f2.role"), bio: t("about.f2.bio") },
         ].map(({ initials, name, role, bio }) => (
           <div class="bg-white rounded-2xl p-8 border border-brand-green-100">
-            <div class="w-20 h-20 bg-brand-green-100 rounded-2xl flex items-center justify-center text-brand-green-700 font-bold text-xl mb-6">
+            <div class="icon-badge w-20 h-20 bg-brand-green-100 rounded-2xl text-brand-green-700 font-bold text-xl mb-6">
               {initials}
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-1">{name}</h3>
+            <h3 class="heading-card mb-1">{name}</h3>
             <p class="text-brand-green-600 text-sm font-medium mb-4">{role}</p>
-            <p class="text-gray-600 text-sm leading-relaxed">{bio}</p>
+            <p class="body-sm">{bio}</p>
           </div>
         ))}
       </div>
@@ -74,12 +74,12 @@ const t = useTranslations(lang);
 
   <!-- Values -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="text-center mb-12">
-        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        <p class="eyebrow mb-3">
           {t("about.values.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">{t("about.values.heading")}</h2>
+        <h2 class="heading-section">{t("about.values.heading")}</h2>
       </div>
       <div class="space-y-14 max-w-4xl mx-auto">
         {[
@@ -109,12 +109,12 @@ const t = useTranslations(lang);
           },
         ].map(({ label, items }) => (
           <div>
-            <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-6 text-center">{label}</p>
+            <p class="eyebrow mb-6 text-center">{label}</p>
             <div class="grid md:grid-cols-3 gap-8">
               {items.map(({ title, body }) => (
                 <div class="text-center">
-                  <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                  <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+                  <h3 class="text-lg font-bold text-content mb-3">{title}</h3>
+                  <p class="body-sm">{body}</p>
                 </div>
               ))}
             </div>

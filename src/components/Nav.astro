@@ -7,6 +7,8 @@ import {
   langLabels,
 } from "../i18n/utils";
 import type { Lang } from "../i18n/utils";
+import IconMenu from "./icons/IconMenu.astro";
+import IconX from "./icons/IconX.astro";
 
 interface Props {
   lang: Lang;
@@ -24,8 +26,8 @@ const navLinks = [
 ];
 ---
 
-<header class="bg-white border-b border-gray-100 sticky top-0 z-50">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+<header class="bg-white border-b border-divider-light sticky top-0 z-50">
+  <nav class="container-page h-16 flex items-center justify-between">
     <!-- Logo -->
     <a
       href={localePath(lang, "/")}
@@ -45,7 +47,7 @@ const navLinks = [
               "text-sm font-medium transition-colors",
               currentPath.startsWith(href)
                 ? "text-brand-green-700"
-                : "text-gray-600 hover:text-brand-green-700",
+                : "text-content-body hover:text-brand-green-700",
             ]}
           >
             {label}
@@ -54,14 +56,14 @@ const navLinks = [
       }
       <a
         href={localePath(lang, "/contact")}
-        class="bg-brand-gold text-brand-green-800 text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-gold-dark transition-colors"
+        class="btn-sm-gold"
       >
         {t("nav.contact")}
       </a>
 
       <!-- Language switcher -->
       <div
-        class="flex items-center gap-2 text-xs font-semibold border-l border-gray-200 pl-4"
+        class="flex items-center gap-2 text-xs font-semibold border-l border-divider pl-4"
       >
         {
           locales.map((l) => (
@@ -72,7 +74,7 @@ const navLinks = [
                 "transition-colors",
                 l === lang
                   ? "text-brand-green-700 cursor-default pointer-events-none"
-                  : "text-gray-400 hover:text-brand-green-700",
+                  : "text-content-subtle hover:text-brand-green-700",
               ]}
               aria-current={l === lang ? "true" : undefined}
             >
@@ -86,43 +88,19 @@ const navLinks = [
     <!-- Mobile menu button -->
     <button
       id="mobile-menu-btn"
-      class="md:hidden p-2 text-gray-600 hover:text-brand-green-700"
+      class="md:hidden p-2 text-content-body hover:text-brand-green-700"
       aria-label={t("nav.aria.toggle")}
       aria-expanded="false"
     >
-      <svg
-        id="icon-open"
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-      <svg
-        id="icon-close"
-        class="w-6 h-6 hidden"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
+      <IconMenu id="icon-open" />
+      <IconX id="icon-close" class="w-6 h-6 hidden" />
     </button>
   </nav>
 
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 flex-col gap-4"
+    class="hidden md:hidden border-t border-divider-light bg-white px-6 py-4 flex-col gap-4"
   >
     {
       navLinks.map(({ label, href }) => (
@@ -132,7 +110,7 @@ const navLinks = [
             "text-sm font-medium transition-colors",
             currentPath.startsWith(href)
               ? "text-brand-green-700"
-              : "text-gray-600 hover:text-brand-green-700",
+              : "text-content-body hover:text-brand-green-700",
           ]}
         >
           {label}
@@ -141,13 +119,13 @@ const navLinks = [
     }
     <a
       href={localePath(lang, "/contact")}
-      class="inline-block bg-brand-gold text-brand-green-800 text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-brand-gold-dark transition-colors"
+      class="btn-sm-gold text-center"
     >
       {t("nav.contact")}
     </a>
 
     <!-- Mobile language switcher -->
-    <div class="flex items-center gap-3 pt-2 border-t border-gray-100">
+    <div class="flex items-center gap-3 pt-2 border-t border-divider-light">
       {
         locales.map((l) => (
           <a
@@ -157,7 +135,7 @@ const navLinks = [
               "text-xs font-semibold transition-colors",
               l === lang
                 ? "text-brand-green-700 cursor-default pointer-events-none"
-                : "text-gray-400 hover:text-brand-green-700",
+                : "text-content-subtle hover:text-brand-green-700",
             ]}
           >
             {langLabels[l]}

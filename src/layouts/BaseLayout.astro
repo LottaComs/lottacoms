@@ -1,6 +1,7 @@
 ---
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
+import "../styles/components.css";
 import { ViewTransitions } from "astro:transitions";
 import { htmlLang } from "../i18n/utils";
 import type { Lang } from "../i18n/utils";
@@ -37,7 +38,7 @@ const pageTitle = title === "LottaComs" ? title : `${title} — LottaComs`;
       rel="stylesheet"
     />
   </head>
-  <body class="bg-white text-gray-900 font-sans antialiased">
+  <body class="bg-white text-content font-sans antialiased">
     <Nav lang={lang} />
     <main>
       <slot />

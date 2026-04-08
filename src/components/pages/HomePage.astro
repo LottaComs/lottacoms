@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations, localePath } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
+import IconCode from "../icons/IconCode.astro";
+import IconUsers from "../icons/IconUsers.astro";
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -14,30 +16,30 @@ const t = useTranslations(lang);
   lang={lang}
 >
   <!-- Hero -->
-  <section class="bg-brand-green-50">
-    <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+  <section class="section-accent">
+    <div class="container-page py-20 md:py-28">
       <div class="max-w-3xl">
-        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-4">
+        <p class="eyebrow mb-4">
           {t("home.hero.eyebrow")}
         </p>
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-content leading-tight mb-6">
           {t("home.hero.heading").split("\n").map((line, i) => (
             <>{i > 0 && <br />}{line}</>
           ))}
         </h1>
-        <p class="text-xl text-gray-600 mb-10 max-w-xl">
+        <p class="subtitle-page mb-10 max-w-xl">
           {t("home.hero.body")}
         </p>
         <div class="flex flex-wrap gap-4">
           <a
             href={localePath(lang, "/contact")}
-            class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+            class="btn-primary"
           >
             {t("home.hero.cta.contact")}
           </a>
           <a
             href={localePath(lang, "/products")}
-            class="inline-block border-2 border-brand-green-600 text-brand-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-100 transition-colors"
+            class="btn-secondary"
           >
             {t("home.hero.cta.products")}
           </a>
@@ -48,38 +50,34 @@ const t = useTranslations(lang);
 
   <!-- What We Do -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="text-center mb-12">
-        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        <p class="eyebrow mb-3">
           {t("home.what.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">{t("home.what.heading")}</h2>
+        <h2 class="heading-section">{t("home.what.heading")}</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Software Products -->
-        <div class="bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100">
-          <div class="w-12 h-12 bg-brand-green-700 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-            </svg>
+        <div class="card-accent">
+          <div class="icon-badge w-12 h-12 bg-brand-green-700 rounded-xl mb-6">
+            <IconCode class="w-6 h-6 text-white" />
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">{t("home.what.software.title")}</h3>
-          <p class="text-gray-600 mb-6">{t("home.what.software.body")}</p>
-          <a href={localePath(lang, "/products")} class="text-brand-green-700 font-semibold text-sm hover:underline">
+          <h3 class="heading-card mb-3">{t("home.what.software.title")}</h3>
+          <p class="text-content-body mb-6">{t("home.what.software.body")}</p>
+          <a href={localePath(lang, "/products")} class="link">
             {t("home.what.software.link")}
           </a>
         </div>
 
         <!-- Talent Services -->
-        <div class="bg-brand-green-50 rounded-2xl p-8 border border-brand-green-100">
-          <div class="w-12 h-12 bg-brand-green-700 rounded-xl flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-            </svg>
+        <div class="card-accent">
+          <div class="icon-badge w-12 h-12 bg-brand-green-700 rounded-xl mb-6">
+            <IconUsers class="w-6 h-6 text-white" />
           </div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">{t("home.what.talent.title")}</h3>
-          <p class="text-gray-600 mb-6">{t("home.what.talent.body")}</p>
-          <a href={localePath(lang, "/services")} class="text-brand-green-700 font-semibold text-sm hover:underline">
+          <h3 class="heading-card mb-3">{t("home.what.talent.title")}</h3>
+          <p class="text-content-body mb-6">{t("home.what.talent.body")}</p>
+          <a href={localePath(lang, "/services")} class="link">
             {t("home.what.talent.link")}
           </a>
         </div>
@@ -89,7 +87,7 @@ const t = useTranslations(lang);
 
   <!-- RoboLab Highlight -->
   <section class="bg-brand-green-700">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
           <p class="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">
@@ -100,7 +98,7 @@ const t = useTranslations(lang);
           <div class="flex flex-wrap gap-4">
             <a
               href={localePath(lang, "/products")}
-              class="inline-block bg-brand-gold text-brand-green-800 font-semibold px-6 py-3 rounded-lg hover:bg-brand-gold-dark transition-colors"
+              class="btn-gold"
             >
               {t("home.robolab.cta.see")}
             </a>

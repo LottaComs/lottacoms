@@ -2,6 +2,8 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { useTranslations, localePath } from "../../i18n/utils";
 import type { Lang } from "../../i18n/utils";
+import IconCheck from "../icons/IconCheck.astro";
+import IconMonitor from "../icons/IconMonitor.astro";
 
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
@@ -14,38 +16,38 @@ const t = useTranslations(lang);
   lang={lang}
 >
   <!-- Header -->
-  <section class="bg-brand-green-50 border-b border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-      <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+  <section class="section-header">
+    <div class="container-page py-16">
+      <p class="eyebrow mb-3">
         {t("products.header.eyebrow")}
       </p>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">{t("products.header.heading")}</h1>
-      <p class="text-xl text-gray-600 max-w-2xl">{t("products.header.body")}</p>
+      <h1 class="heading-page mb-4">{t("products.header.heading")}</h1>
+      <p class="subtitle-page max-w-2xl">{t("products.header.body")}</p>
     </div>
   </section>
 
   <!-- RoboLab feature card -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div>
           <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full mb-6">
             <span class="w-2 h-2 bg-amber-400 rounded-full"></span>
             {t("products.robolab.badge")}
           </div>
-          <h2 class="text-3xl font-bold text-gray-900 mb-4">{t("products.robolab.heading")}</h2>
-          <p class="text-gray-600 text-lg mb-6 leading-relaxed">{t("products.robolab.body1")}</p>
-          <p class="text-gray-600 mb-8 leading-relaxed">{t("products.robolab.body2")}</p>
+          <h2 class="heading-section mb-4">{t("products.robolab.heading")}</h2>
+          <p class="body-text text-lg mb-6">{t("products.robolab.body1")}</p>
+          <p class="body-text mb-8">{t("products.robolab.body2")}</p>
           <div class="flex flex-wrap gap-3 mb-10">
             <a
               href="/robolab"
-              class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+              class="btn-primary"
             >
               {t("products.robolab.cta.demo")}
             </a>
             <a
               href={localePath(lang, "/contact")}
-              class="inline-block border-2 border-brand-green-600 text-brand-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-50 transition-colors"
+              class="btn-secondary"
             >
               {t("footer.cta.button")}
             </a>
@@ -54,7 +56,7 @@ const t = useTranslations(lang);
 
         <!-- Benefits list -->
         <div class="space-y-5">
-          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
+          <h3 class="eyebrow text-content-muted font-semibold mb-6">
             {t("products.robolab.benefits.label")}
           </h3>
           {[
@@ -64,14 +66,12 @@ const t = useTranslations(lang);
             { title: t("products.robolab.b4.title"), body: t("products.robolab.b4.body") },
           ].map(({ title, body }) => (
             <div class="flex gap-4">
-              <div class="w-6 h-6 bg-brand-green-100 rounded-full flex items-center justify-center shrink-0 mt-0.5">
-                <svg class="w-3.5 h-3.5 text-brand-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
-                </svg>
+              <div class="icon-badge w-6 h-6 bg-brand-green-100 rounded-full mt-0.5">
+                <IconCheck class="w-3.5 h-3.5 text-brand-green-700" strokeWidth="2.5" />
               </div>
               <div>
-                <p class="font-semibold text-gray-900 mb-1">{title}</p>
-                <p class="text-gray-600 text-sm leading-relaxed">{body}</p>
+                <p class="font-semibold text-content mb-1">{title}</p>
+                <p class="body-sm">{body}</p>
               </div>
             </div>
           ))}
@@ -81,13 +81,11 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Screenshot / demo placeholder -->
-  <section class="bg-brand-green-50 border-y border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
+  <section class="section-accent border-y">
+    <div class="container-page py-16">
       <div class="bg-brand-green-700 rounded-2xl aspect-video flex items-center justify-center">
         <div class="text-center text-green-200">
-          <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-          </svg>
+          <IconMonitor class="w-16 h-16 mx-auto mb-4 opacity-50" />
           <p class="font-medium">{t("products.demo.caption")}</p>
         </div>
       </div>
@@ -96,18 +94,18 @@ const t = useTranslations(lang);
 
   <!-- Coming soon -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="container-page py-20">
       <div class="text-center mb-12">
-        <p class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3">
+        <p class="eyebrow mb-3">
           {t("products.coming.eyebrow")}
         </p>
-        <h2 class="text-3xl font-bold text-gray-900">{t("products.coming.heading")}</h2>
-        <p class="text-gray-600 mt-3 max-w-xl mx-auto">{t("products.coming.body")}</p>
+        <h2 class="heading-section">{t("products.coming.heading")}</h2>
+        <p class="text-content-body mt-3 max-w-xl mx-auto">{t("products.coming.body")}</p>
       </div>
-      <div class="border-2 border-dashed border-gray-200 rounded-2xl p-12 text-center max-w-md mx-auto">
+      <div class="border-2 border-dashed border-divider rounded-2xl p-12 text-center max-w-md mx-auto">
         <p class="text-4xl mb-4">🚧</p>
-        <p class="font-semibold text-gray-900 mb-2">{t("products.coming.label")}</p>
-        <p class="text-gray-500 text-sm">{t("products.coming.sub")}</p>
+        <p class="font-semibold text-content mb-2">{t("products.coming.label")}</p>
+        <p class="text-content-muted text-sm">{t("products.coming.sub")}</p>
       </div>
     </div>
   </section>

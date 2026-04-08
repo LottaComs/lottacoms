@@ -23,6 +23,20 @@ export default {
             dark: "#c4921c",
           },
         },
+        // Semantic text / foreground colors — named by function, not shade
+        content: {
+          DEFAULT: "#111827", // gray-900 — headings, primary emphasis
+          body:    "#4B5563", // gray-600 — paragraph text
+          muted:   "#6B7280", // gray-500 — secondary / meta text
+          subtle:  "#9CA3AF", // gray-400 — placeholders, decorative icons
+          label:   "#374151", // gray-700 — form labels
+        },
+        // Semantic border / divider colors
+        divider: {
+          DEFAULT: "#E5E7EB", // gray-200 — card borders, standard dividers
+          light:   "#F3F4F6", // gray-100 — header/nav subtle borders
+          input:   "#D1D5DB", // gray-300 — form field borders
+        },
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],

@@ -1,5 +1,7 @@
 import { useState, useMemo } from "react";
 import type { Job } from "../lib/jobs";
+import IconMapPin from "./icons/IconMapPin";
+import IconCurrency from "./icons/IconCurrency";
 
 interface Props {
   jobs: Job[];
@@ -33,7 +35,7 @@ export default function JobSearch({ jobs, lang, labels, jobsBasePath }: Props) {
 
   if (jobs.length === 0) {
     return (
-      <p className="text-center text-gray-500 py-12">{labels.empty}</p>
+      <p className="text-center text-content-muted py-12">{labels.empty}</p>
     );
   }
 
@@ -45,38 +47,33 @@ export default function JobSearch({ jobs, lang, labels, jobsBasePath }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={labels.searchPlaceholder}
-          className="w-full max-w-md mx-auto block rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 outline-none transition-colors"
+          className="w-full max-w-md mx-auto block rounded-lg border border-divider-input px-4 py-3 text-sm text-content placeholder-content-subtle focus:border-brand-green-600 focus:ring-1 focus:ring-brand-green-600 outline-none transition-colors"
         />
       </div>
 
       {filtered.length === 0 ? (
-        <p className="text-center text-gray-500 py-8">{labels.noResults}</p>
+        <p className="text-center text-content-muted py-8">{labels.noResults}</p>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
           {filtered.map((job) => (
             <a
               key={job.slug}
               href={`${jobsBasePath}/${job.slug}`}
-              className="block rounded-xl border border-gray-200 bg-white p-6 hover:border-brand-green-300 hover:shadow-md transition-all group"
+              className="block rounded-xl border border-divider bg-white p-6 hover:border-brand-green-300 hover:shadow-md transition-all group"
             >
-              <h3 className="text-lg font-bold text-gray-900 group-hover:text-brand-green-700 transition-colors mb-3">
+              <h3 className="text-lg font-bold text-content group-hover:text-brand-green-700 transition-colors mb-3">
                 {job.title}
               </h3>
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-content-muted">
                 {job.location && (
                   <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                    <IconMapPin className="w-4 h-4 text-content-subtle" />
                     {job.location}
                   </span>
                 )}
                 {job.salary && (
                   <span className="flex items-center gap-1.5">
-                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                    </svg>
+                    <IconCurrency className="w-4 h-4 text-content-subtle" />
                     {job.salary}
                   </span>
                 )}
@@ -84,20 +81,20 @@ export default function JobSearch({ jobs, lang, labels, jobsBasePath }: Props) {
               {job.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-3">
                   {job.tags.map((tag) => (
-                    <span key={tag} className="inline-block bg-brand-green-100 text-brand-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                    <span key={tag} className="tag text-xs">
                       {tag}
                     </span>
                   ))}
                 </div>
               )}
               <div className="flex items-center gap-4 mt-4">
-                <span className="text-sm font-medium text-brand-green-700 group-hover:underline">
+                <span className="link">
                   {labels.viewDetails} →
                 </span>
                 <a
                   href={`${jobsBasePath}/${job.slug}#apply`}
                   onClick={(e) => e.stopPropagation()}
-                  className="ml-auto inline-block text-sm font-semibold bg-brand-green-700 text-white px-4 py-1.5 rounded-lg hover:bg-brand-green-800 transition-colors"
+                  className="ml-auto btn-sm"
                 >
                   {labels.applyNow}
                 </a>

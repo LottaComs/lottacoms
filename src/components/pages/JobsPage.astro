@@ -20,17 +20,17 @@ const jobsBasePath = localePath(lang, "/jobs");
   lang={lang}
 >
   <!-- Header -->
-  <section class="bg-brand-green-50 border-b border-brand-green-100">
-    <div class="max-w-6xl mx-auto px-6 py-16">
+  <section class="section-header">
+    <div class="container-page py-16">
       <p
-        class="text-sm font-medium text-brand-green-600 uppercase tracking-wider mb-3"
+        class="eyebrow mb-3"
       >
         {t("jobs.header.eyebrow")}
       </p>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+      <h1 class="heading-page mb-4">
         {t("jobs.header.heading")}
       </h1>
-      <p class="text-xl text-gray-600 max-w-2xl">
+      <p class="subtitle-page max-w-2xl">
         {t("jobs.header.body")}
       </p>
     </div>
@@ -38,7 +38,7 @@ const jobsBasePath = localePath(lang, "/jobs");
 
   <!-- Job listings with search -->
   <section class="bg-white">
-    <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="container-page py-16">
       <JobSearch
         client:load
         jobs={jobs}
