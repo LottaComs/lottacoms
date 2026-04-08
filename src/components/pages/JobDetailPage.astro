@@ -230,7 +230,7 @@ const benefitsHtml = job.benefits ? await marked.parse(job.benefits) : "";
               name="attachment"
               multiple
               accept=".pdf,.doc,.docx,.txt,.rtf,.odt,.png,.jpg,.jpeg"
-              class="w-full text-sm text-content-body file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-brand-green-50 file:text-brand-green-700 hover:file:bg-brand-green-100 file:cursor-pointer file:transition-colors"
+              class="input-file"
             />
             <p class="mt-1.5 text-xs text-content-subtle">
               {t("jobs.apply.attachment.hint")}

@@ -90,6 +90,14 @@
   /*  Form fields                                                       */
   /* ------------------------------------------------------------------ */
 
+  .input-file {
+    @apply w-full text-sm text-content-body
+           file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0
+           file:text-sm file:font-medium file:bg-brand-green-50
+           file:text-brand-green-700 hover:file:bg-brand-green-100
+           file:cursor-pointer file:transition-colors;
+  }
+
   .input-field {
     @apply w-full px-4 py-3 rounded-lg transition
            border border-divider bg-white
