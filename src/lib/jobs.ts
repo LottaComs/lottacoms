@@ -1,6 +1,7 @@
 export interface Job {
   slug: string;
   title: string;
+  summary: string;
   salary: string;
   location: string;
   description: string;
@@ -20,6 +21,7 @@ export function getJobs(): Job[] {
     return {
       slug: filename.replace(/\.md$/, ""),
       title: data.title ?? "",
+      summary: data.summary ?? "",
       salary: data.salary ?? "",
       location: data.location ?? "",
       description: data.description ?? "",

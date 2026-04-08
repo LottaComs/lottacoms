@@ -11,6 +11,7 @@ interface Props {
     salary: string;
     location: string;
     viewDetails: string;
+    applyNow: string;
   };
   jobsBasePath: string;
 }
@@ -79,9 +80,18 @@ export default function JobSearch({ jobs, lang, labels, jobsBasePath }: Props) {
                   </span>
                 )}
               </div>
-              <span className="inline-block mt-4 text-sm font-medium text-brand-green-700 group-hover:underline">
-                {labels.viewDetails} →
-              </span>
+              <div className="flex items-center gap-4 mt-4">
+                <span className="text-sm font-medium text-brand-green-700 group-hover:underline">
+                  {labels.viewDetails} →
+                </span>
+                <a
+                  href={`${jobsBasePath}/${job.slug}#apply`}
+                  onClick={(e) => e.stopPropagation()}
+                  className="ml-auto inline-block text-sm font-semibold bg-brand-green-700 text-white px-4 py-1.5 rounded-lg hover:bg-brand-green-800 transition-colors"
+                >
+                  {labels.applyNow}
+                </a>
+              </div>
             </a>
           ))}
         </div>

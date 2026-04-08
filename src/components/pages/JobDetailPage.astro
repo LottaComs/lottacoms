@@ -17,6 +17,43 @@ const t = useTranslations(lang);
   description={job.description.slice(0, 160)}
   lang={lang}
 >
+  <!-- Sticky title bar (hidden until original title scrolls out) -->
+  <div
+    id="sticky-title"
+    class="sticky top-16 z-40 bg-white border-b border-gray-200 -translate-y-full opacity-0 transition-all duration-200 pointer-events-none"
+  >
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4 min-w-0">
+        <h2 class="text-lg font-bold text-gray-900 truncate">{job.title}</h2>
+        <div class="hidden sm:flex items-center gap-4 text-sm text-gray-500 shrink-0">
+          {job.location && (
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {job.location}
+            </span>
+          )}
+          {job.salary && (
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+              </svg>
+              {job.salary}
+            </span>
+          )}
+        </div>
+      </div>
+      <a
+        href="#apply"
+        class="inline-block bg-brand-green-700 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-brand-green-800 transition-colors shrink-0"
+      >
+        {t("jobs.detail.apply")}
+      </a>
+    </div>
+  </div>
+
   <section class="bg-brand-green-50 border-b border-brand-green-100">
     <div class="max-w-6xl mx-auto px-6 py-16">
       <a
@@ -25,54 +62,38 @@ const t = useTranslations(lang);
       >
         {t("jobs.detail.back")}
       </a>
-      <h1 class="text-4xl font-bold text-gray-900 mb-4">{job.title}</h1>
-      <div class="flex flex-wrap gap-x-6 gap-y-2 text-gray-600">
-        {
-          job.location && (
+      <div class="max-w-3xl">
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-3">
+          <h1 id="job-title" class="text-4xl font-bold text-gray-900">{job.title}</h1>
+          <a
+            href="#apply"
+            class="inline-block bg-brand-green-700 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-brand-green-800 transition-colors shrink-0"
+          >
+            {t("jobs.detail.apply")}
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-gray-600 mb-4">
+          {job.location && (
             <span class="flex items-center gap-1.5">
-              <svg
-                class="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
               {job.location}
             </span>
-          )
-        }
-        {
-          job.salary && (
+          )}
+          {job.salary && (
             <span class="flex items-center gap-1.5">
-              <svg
-                class="w-5 h-5 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                />
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
               </svg>
               {job.salary}
             </span>
-          )
-        }
+          )}
+        </div>
+        {job.summary && (
+          <p class="text-xl text-gray-600">{job.summary}</p>
+        )}
       </div>
     </div>
   </section>
@@ -118,14 +139,126 @@ const t = useTranslations(lang);
         )
       }
 
-      <div class="pt-4">
-        <a
-          href={localePath(lang, "/contact")}
-          class="inline-block bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+      <div id="apply" class="pt-4 scroll-mt-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          {t("jobs.apply.heading")}
+        </h2>
+        <form
+          method="POST"
+          action="https://formspree.io/f/mgopdnjy"
+          enctype="multipart/form-data"
+          class="space-y-6"
         >
-          {t("jobs.detail.apply")}
-        </a>
+          <input type="hidden" name="_next" value="/success/" />
+          <input type="text" name="_gotcha" style="display:none" />
+          <input type="hidden" name="_subject" value={`Job application: ${job.title}`} />
+          <input type="hidden" name="position" value={job.title} />
+
+          <!-- Name -->
+          <div>
+            <label
+              for="name"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              {t("jobs.apply.name")}
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder={t("jobs.apply.name.ph")}
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-green-500 focus:border-transparent transition"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              {t("jobs.apply.email")}
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder={t("jobs.apply.email.ph")}
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-green-500 focus:border-transparent transition"
+            />
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              {t("jobs.apply.message")}
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="5"
+              placeholder={t("jobs.apply.message.ph")}
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brand-green-500 focus:border-transparent transition resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Attachments -->
+          <div>
+            <label
+              for="attachment"
+              class="block text-sm font-medium text-gray-700 mb-2"
+            >
+              {t("jobs.apply.attachment")}
+            </label>
+            <input
+              type="file"
+              id="attachment"
+              name="attachment"
+              multiple
+              accept=".pdf,.doc,.docx,.txt,.rtf,.odt,.png,.jpg,.jpeg"
+              class="w-full text-sm text-gray-600 file:mr-4 file:py-2.5 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-brand-green-50 file:text-brand-green-700 hover:file:bg-brand-green-100 file:cursor-pointer file:transition-colors"
+            />
+            <p class="mt-1.5 text-xs text-gray-400">
+              {t("jobs.apply.attachment.hint")}
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-brand-green-700 text-white font-semibold px-6 py-3 rounded-lg hover:bg-brand-green-800 transition-colors"
+          >
+            {t("jobs.apply.submit")}
+          </button>
+        </form>
       </div>
     </div>
   </section>
+
+  <script>
+    const title = document.getElementById("job-title");
+    const sticky = document.getElementById("sticky-title");
+    if (title && sticky) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            sticky.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
+            sticky.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
+          } else {
+            sticky.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
+            sticky.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
+          }
+        },
+        { rootMargin: "-64px 0px 0px 0px" },
+      );
+      observer.observe(title);
+    }
+  </script>
 </BaseLayout>

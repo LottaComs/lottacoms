@@ -273,8 +273,21 @@ const en = {
   "jobs.detail.description": "Description",
   "jobs.detail.requirements": "Requirements",
   "jobs.detail.benefits": "Benefits",
-  "jobs.detail.apply": "I'm interested",
+  "jobs.detail.apply": "Apply now",
   "jobs.detail.back": "← Back to all jobs",
+  "jobs.card.apply": "Apply now",
+
+  // ── Job Application Form ────────────────────────────────────
+  "jobs.apply.heading": "Apply for this position",
+  "jobs.apply.name": "Name",
+  "jobs.apply.name.ph": "Your full name",
+  "jobs.apply.email": "Email",
+  "jobs.apply.email.ph": "you@example.com",
+  "jobs.apply.message": "Message",
+  "jobs.apply.message.ph": "Tell us a bit about yourself, or ask us anything about the role...",
+  "jobs.apply.attachment": "Attachments",
+  "jobs.apply.attachment.hint": "Upload your CV or other relevant files (max 10 MB total)",
+  "jobs.apply.submit": "Submit application",
 } as const;
 
 export default en;
