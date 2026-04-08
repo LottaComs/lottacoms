@@ -24,4 +24,4 @@ content:
         type: rich-text
       - name: benefits
         type: rich-text
-    filename: "{number}-{title}.md"
+    filename: "{number}.md"

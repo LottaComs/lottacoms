@@ -20,7 +20,7 @@ const t = useTranslations(lang);
   <!-- Sticky title bar (hidden until original title scrolls out) -->
   <div
     id="sticky-title"
-    class="sticky top-16 z-40 bg-white border-b border-gray-200 -translate-y-full opacity-0 transition-all duration-200 pointer-events-none"
+    class="fixed top-16 left-0 right-0 z-40 bg-white border-b border-gray-200 -translate-y-full opacity-0 transition-all duration-200 pointer-events-none"
   >
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between gap-4">
       <div class="flex items-center gap-4 min-w-0">
@@ -253,22 +253,28 @@ const t = useTranslations(lang);
   </section>
 
   <script>
-    const title = document.getElementById("job-title");
-    const sticky = document.getElementById("sticky-title");
-    if (title && sticky) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            sticky.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
-            sticky.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
-          } else {
-            sticky.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
-            sticky.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
-          }
-        },
-        { rootMargin: "-64px 0px 0px 0px" },
-      );
-      observer.observe(title);
-    }
+    let observer: IntersectionObserver | undefined;
+
+    document.addEventListener("astro:page-load", () => {
+      observer?.disconnect();
+
+      const title = document.getElementById("job-title");
+      const sticky = document.getElementById("sticky-title");
+      if (title && sticky) {
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              sticky.classList.add("-translate-y-full", "opacity-0", "pointer-events-none");
+              sticky.classList.remove("translate-y-0", "opacity-100", "pointer-events-auto");
+            } else {
+              sticky.classList.remove("-translate-y-full", "opacity-0", "pointer-events-none");
+              sticky.classList.add("translate-y-0", "opacity-100", "pointer-events-auto");
+            }
+          },
+          { rootMargin: "-64px 0px 0px 0px" },
+        );
+        observer.observe(title);
+      }
+    });
   </script>
 </BaseLayout>
