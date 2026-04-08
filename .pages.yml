@@ -5,7 +5,11 @@ content:
     type: collection
     path: content/jobs
     fields:
+      - name: number
+        type: string
       - name: title
+        type: string
+      - name: summary
         type: string
       - name: salary
         type: string
